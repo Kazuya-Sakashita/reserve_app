@@ -1,0 +1,43 @@
+<div>
+    <div class ="col-md-4 offset-md-4">
+    <%= link_to 'HOME',root_path, class: 'header-menu' %>
+<h1>ユーザー登録</h1>
+<%= form_with(model: @user, local: true) do |f| %>
+    <div class="form-group">
+    <%= f.label :name, "名前" %>
+    <%=f.text_field :name, :placeholder => "（例）山田太郎" , class:"form-control" %>
+    </div>
+
+    <div class="form-group">
+    <%= f.label :email, "メールアドレス" %>
+    <%=f.text_field :email, :placeholder => "（例）123@aa.bb.jp" ,  class:"form-control" %>
+    </div>
+
+
+    <div class="form-group">
+    <%= f.label :phone_number, "電話番号" %>
+    <%=f.text_field :phone_number, :placeholder => "（例）09012345678" ,  class:"form-control" %>
+    </div>
+
+
+    <div class="form-group">
+    <%= f.label :address, "住所" %>
+    <%=f.text_field :address, :placeholder => "（例）大阪府大阪市東住吉区西今川4-23-12" ,  class:"form-control" %>
+    </div>
+
+    <div class="form-group">
+    <%= f.label :birthday, "誕生日" %>
+    <%=f.text_field :birthday, :placeholder => "（例）2020/01/01" , class:"form-control" %>
+    </div>
+
+    <div class="form-group">
+    <%= f.label :etc, "その他" %>
+    <%=f.text_area :etc, :placeholder => "（例）ヘアスタイルなどについてのお悩みなど、なんでもお気軽に入力ください",  class:"form-control" %>
+    </div>
+
+    <%= f.submit "会員登録" , class:"btn btn-primary" %>
+    
+<% end %>
+
+</div>
+</div>
