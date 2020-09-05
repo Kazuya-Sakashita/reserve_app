@@ -1,5 +1,6 @@
 Rails.application.routes.draw do
 
+  resources :events
   get 'users/new', to:'users#new', as:'users_new'
 
   get 'users/show'

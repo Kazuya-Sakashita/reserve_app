@@ -2,6 +2,11 @@
     <div class ="col-md-4 offset-md-4">
     <%= link_to 'HOME',root_path, class: 'header-menu' %>
 <h1>ユーザー登録</h1>
+
+<h6>この度は数多くあるお店の中から選んで頂き、誠にありがとうございます。</h6>
+<h6>お手数ですが、必要事項を入力頂き、会員登録をよろしくお願致します。</h6><br>
+
+
 <%= form_with(model: @user, local: true) do |f| %>
     <div class="form-group">
     <%= f.label :name, "名前" %>
