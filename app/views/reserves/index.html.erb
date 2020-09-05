@@ -1,8 +1,9 @@
 <div id="header">
   <h2>
-    <%= link_to 'お知らせ/',root_path, class: 'header-menu' %>
-    <%= link_to 'お店について/',root_path, class: 'header-menu' %>
-    <%= link_to 'メニュー/',root_path, class: 'header-menu' %>
+      <%= link_to '管理者メニュー/', events_path, class: 'header-menu' %>
+    <%= link_to 'お知らせ/',root_path(anchor:'news'), class: 'header-menu' %>
+    <%= link_to 'お店について/',root_path(anchor:'about_me'), class: 'header-menu' %>
+    <%= link_to 'メニュー/',root_path(anchor:'menu'), class: 'header-menu' %>
     <%= link_to '予約/',root_path, class: 'header-menu' %>
     <%= link_to '会員登録/',users_new_path, class: 'header-menu' %>
     <%= link_to 'ログイン/',root_path, class: 'header-menu' %>
@@ -57,7 +58,7 @@
 
 
 <div>
-    <h3>Ohana</h3>
+    <h3 id="about_me">Ohana</h3>
     <p>オハナ（ハワイ語:Ohana)は、ハワイ語で広義の『家族』に相当する概念</p>
     <p>オハナは、『愛』ともいうべき『絆』で結ばれた人のことをいう言葉・・・</p>
 </div>
@@ -80,8 +81,10 @@
     <br>
     <br>
 
-<h6>メニュー</h6>
-
+<h6 id="menu">メニュー</h6>
+  <div>
+    <p>ここにカットなどのメニューを表示する</p>
+  </div>
 
     <br>
     <br>
@@ -122,6 +125,11 @@
     <br>
     <br>
     <br>
+    <h6>お知らせ</h6>
+  <div>
+    <p id="news">お店からのお知らせを掲載</p>
+  </div>
+
     <br>
     <br>
     <br>
