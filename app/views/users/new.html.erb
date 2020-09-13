@@ -1,6 +1,10 @@
+<br>
+<br>
+<br>
+<br>
+
 <div>
     <div class ="col-md-4 offset-md-4">
-    <%= link_to 'HOME',root_path, class: 'header-menu' %>
 <h1>ユーザー登録</h1>
 
 <h6>この度は数多くあるお店の中から選んで頂き、誠にありがとうございます。</h6>
@@ -20,12 +24,12 @@
 
     <div class="form-group">
     <%= f.label :password, "パスワード" %>
-    <%=f.text_field :password, :placeholder => "（例）パスワードを設定ください" ,  class:"form-control" %>
+    <%=f.password_field :password, :placeholder => "（例）パスワードを設定ください" ,  class:"form-control" %>
     </div>
 
         <div class="form-group">
     <%= f.label :password_confirmation, "パスワード（再確認）" %>
-    <%=f.text_field :password_confirmation, :placeholder => "（例）もう一度パスワードを入力ください" ,  class:"form-control" %>
+    <%=f.password_field :password_confirmation, :placeholder => "（例）もう一度パスワードを入力ください" ,  class:"form-control" %>
     </div>
 
     <div class="form-group">
