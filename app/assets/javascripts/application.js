@@ -47,7 +47,7 @@ $(function () {
                 dayNamesShort: ['日', '月', '火', '水', '木', '金', '土'],
                 //ボタンのレイアウト
                 header: {
-                    left: '',
+                    left: 'today month,agendaWeek',
                     center: 'title',
                     right: 'today prev,next'
                 },
@@ -67,6 +67,8 @@ $(function () {
                 editable: true,
                 //イベントの時間表示を２４時間に
                 timeFormat: "HH:mm",
+                // デフォルトで表示させたいテーブル（この場合は、週のカレンダーを表示させる）
+                defaultView: 'agendaWeek',
                 //イベントの色を変える
                 eventColor: '#87cefa',
                 //イベントの文字色を変える

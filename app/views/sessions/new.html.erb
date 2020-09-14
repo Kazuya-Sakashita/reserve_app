@@ -3,21 +3,21 @@
 <br>
 
 <% provide(:title, "Log in") %>
-<h1>Log in</h1>
+
 
 <div class="row">
-  <div class="col-md-6 col-md-offset-3">
-
+  <div class ="col-lg-6 offset-md-2">
+    <h1>Log in</h1>
     <%= form_for(:session, url: login_path) do |f| %>
-      <%= f.label :email %>
-      <%= f.email_field :mail, class: 'form-control' %>
+    <%= f.label :email, "メール or 電話番号" %><%# メールと電話番号両方にしたため下のように書いた　%>
+    <input type="text" name="contact" class="form-control">
+    
+    <%= f.label :password %>
+    <%= f.password_field :password, class: 'form-control' %>
 
-      <%= f.label :password %>
-      <%= f.password_field :password, class: 'form-control' %>
-
-      <div>
-        <%= f.submit "Log in", class: "btn btn-primary" %>
-      </div>
+    <div>
+      <%= f.submit "Log in", class: "btn btn-primary" %>
+    </div>
 
     <p>New user? <%= link_to "Sign up now!", new_users_path %></p>
   </div>

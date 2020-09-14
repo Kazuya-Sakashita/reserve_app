@@ -1,5 +1,4 @@
 class SessionsController < ApplicationController
-  before_action :set_user, only: [:create]
 
   def new
     @user = User.new
@@ -7,10 +6,14 @@ class SessionsController < ApplicationController
 
 
   def create
-    user = User.find_by(mail: params[:session][:mail].downcase)
+    # メール & 電話での実装
+    user = User.find_by(mail: params[:contact].downcase)
+    if user.nil?
+      user = User.find_by(contact: params[:contact].downcase)
+    end
     if user && user.authenticate(params[:session][:password])
       log_in user
-      user_url(user)
+      redirect_to users_show_path(user.id)
     else
       flash.now[:danger] = 'Invalid email/password combination'
       render 'new'
