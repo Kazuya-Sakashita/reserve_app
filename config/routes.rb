@@ -16,7 +16,7 @@ Rails.application.routes.draw do
   get 'reserves/new'
 
   
-  delete 'logout', to:"sessions#destroy",as: "logout"
+  get 'logout', to:"sessions#destroy",as: "logout"
 
 
   

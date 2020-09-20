@@ -6,16 +6,22 @@
 
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+
+
   </head>
 
 
     <!-- body タグに data-turbolinks 属性を追加 -->
   <body data-turbolinks="false">
-  <div id="header">
+  <header id="header">
     <ul>
       <li><%= link_to 'HOME',root_path%></li>
+      <% if logged_in? %>
+      <li><%= link_to 'ログアウト',logout_path %></li>
+      <% else %>
       <li><%= link_to 'ログイン',login_path %></li>
       <li><%= link_to '会員登録',new_users_path %></li>
+      <% end %>
       <li><%= link_to '予約',"#" %></li>
       <li><%= link_to 'メニュー',root_path(anchor:'menu') %></li>
       <li><%= link_to 'お店について',root_path(anchor:'about_me') %></li>
@@ -23,7 +29,7 @@
       <li><%= link_to '管理者メニュー', events_path %></li>
    </ul>
    <br>
-</div>
+  </header>
   
     <%= yield %>
   </body>

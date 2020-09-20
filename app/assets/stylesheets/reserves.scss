@@ -1,3 +1,65 @@
 // Place all the styles related to the reserves controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+
+
+//営業カレンダーのCSS
+
+#business-calendar-3	{	list-style: none;}
+#content tr td				{ border-top:none !important; }
+#content table				{ border:none; }
+.business-calendar			{ background: #CACACA; border-right:0; border-bottom:0; border-collapse:separate; color: #666; border-spacing:0;
+							  border-top: 1px solid #CACACA !important; border-left: 1px solid #CACACA !important;
+							  font-size: 9px; margin: 0 0 5px; padding: 0; text-align: center; width: 100%; }
+* html body .business-calendar { border-collapse:collapse; }
+.business-calendar caption	{ border-top: 1px solid #CACACA; border-left: 1px solid #CACACA; caption-side: top;
+							  border-right: 1px solid #CACACA; margin: 5px 0 0;  padding: 3px; text-align: center; }
+.business-calendar th		{ background: #EEEEEE; border-top:none; border-left:0; border-right: 1px solid #CACACA; border-bottom: 1px solid #CACACA; font-weight: normal; padding: 3px; width:14%; text-align:center; }
+.business-calendar td		{ background: #FFFFFF; border-top:none; border-left:0; border-right: 1px solid #CACACA; border-bottom: 1px solid #CACACA; padding: 3px; text-align:center; }
+.business-calendar .today	{ background: #638fc0; color: #fff; }
+.business-calendar .attr0	{ color: #ff4e9c; background:#ffecf5; }
+.business-calendar .attr1	{ color: #666666; background:#daecea; }
+.business-calendar .attr2	{ color: #666666; background:#b7ddff; }
+.business-calendar .attr3	{ color: #0000FF; background:#CCCCFF; }
+.business-calendar .attr4	{ color: #CC00CC; background:#FFCCFF; }
+.business-calendar-attribute 					{ margin:5px 0 0; padding:0; }
+.business-calendar-attribute li					{ padding:0px 10px 0 4px; line-height:12px; list-style:none; }
+.business-calendar-attribute .attr0				{ color: #ff4e9c; border-left:12px solid #ffecf5; height: 12px; }
+.business-calendar-attribute .attr1				{ color: #666666; border-left:12px solid #daecea; height: 12px; }
+.business-calendar-attribute .attr2				{ color: #666666; border-left:12px solid #638fc0; height: 12px; }
+.business-calendar-attribute .attr3				{ color: #0000FF; background:#CCCCFF; }
+.business-calendar-attribute .attr4				{ color: #CC00CC; background:#FFCCFF; }
+
+.calendarTable {
+    float: left;
+    max-width: 590px;
+    width: 61.4583%;
+    margin-left: 5.2083%;
+}
+.calendarTable table {
+    width: 253px;
+    font-size: 93%;
+    text-align: center;
+    box-sizing: border-box;
+    line-height: 1;
+    border-collapse: collapse;
+}
+.calendarTable table th {
+    border: solid 1px #959595;
+    background-color: #ececec;
+    font-weight: normal;
+    padding: 8px 0;
+    width: auto;
+}
+.calendarTable table td {
+    border: solid 1px #959595;
+    padding: 6px 0 5px;
+}
+.calendarTable table caption {
+    margin-bottom: 10px;
+    font-weight: bold;
+    border: none;
+    margin-top: 0;
+    padding: 0;
+}
