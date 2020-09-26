@@ -44,16 +44,36 @@
 
 
 
-
+    <%#お店の紹介　コメント%>
 <div>
     <h3 id="about_me">Ohana</h3>
     <p>オハナ（ハワイ語:Ohana)は、ハワイ語で広義の『家族』に相当する概念</p>
     <p>オハナは、『愛』ともいうべき『絆』で結ばれた人のことをいう言葉・・・</p>
+</div>
 
-    
-    ここにお店情報を表示する。画像を使って紹介する<br><br><br><br><br>
-    住所	〒546-0042 大阪府大阪市東住吉区西今川4-23-12		<br>
-    アクセス	大阪市営谷町線 駒川中野駅 徒歩2分		<br>
+
+
+
+
+    <p><span>ここにお店情報を表示する。画像を使って紹介する</span></p><br><br><br><br><br>
+    <%#お店の紹介画像%>
+
+<div class="image_container">
+    <%= image_tag "ohana_pic01.jpg", alt: "お店画像", class: "image", width: "200px"  %>
+    <%= image_tag "ohana_pic02.jpg", alt: "お店画像", class: "image", width: "220px"  %>
+    <%= image_tag "ohana_pic02-2.jpg", alt: "お店画像", class: "image", width: "200px" %>
+    <%= image_tag "ohana_pic03.jpg", alt: "お店画像", class: "image", height: "150px" %>
+</div>
+
+<br><br><br><br><br>
+
+
+<%#地図表示%>
+    <iframe src =https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3283.3180907791007!2d135.53251365131595!3d34.621401094871835!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x6000de8f873e4b1d%3A0xb9b56e4cb201c27b!2z44CSNTQ2LTAwNDIg5aSn6Ziq5bqc5aSn6Ziq5biC5p2x5L2P5ZCJ5Yy66KW_5LuK5bed77yU5LiB55uu77yS77yT4oiS77yR77yS!5e0!3m2!1sja!2sjp!4v1600989074507!5m2!1sja!2sjp" width="600" height="450" frameborder="0" style="border:0;" allowfullscreen="" aria-hidden="false" tabindex="0"></iframe>"
+    <br><br>
+        住所	〒546-0042 大阪府大阪市東住吉区西今川4-23-12		<br>
+        アクセス	大阪市営谷町線 駒川中野駅 徒歩2分		<br>
+
 <br><br><br><br>
 
 <%#カレンダー%>
@@ -78,8 +98,7 @@
                 </span>
             </p>
             <p class="lastTime">
-                9：30 ～ 18：30（最終受付）
-                <em>※ 第2、第4金曜日は受付19：00まで</em>
+                <em>※ 土日祝は8時30分から営業しております</em>
             </p>
             <dl class="holiday_dl">
                 <dt>［ 定休日 ］</dt>
@@ -122,7 +141,7 @@
                                     <td id="day20200908" class="tuesday before ">8</td>
                                     <td id="day20200909" class="wednesday before ">9</td>
                                     <td id="day20200910" class="thursday before">10</td>
-                                    <td id="day20200911" class="friday before attr1">11</td>
+                                    <td id="day20200911" class="friday before ß">11</td>
                                     <td id="day20200912" class="saturday before">12</td>
                                 </tr>
                                 <tr>
@@ -135,16 +154,16 @@
                                     <td id="day20200919" class="saturday before">19</td>
                                 </tr>
                                 <tr>
-                                    <td id="day20200920" class="sunday after today">20</td>
-                                    <td id="day20200921" class="monday after attr0">21</td>
-                                    <td id="day20200922" class="tuesday after">22</td>
-                                    <td id="day20200923" class="wednesday after">23</td>
-                                    <td id="day20200924" class="thursday after">24</td>
-                                    <td id="day20200925" class="friday after attr1">25</td>
-                                    <td id="day20200926" class="saturday after">26</td>
+                                    <td id="day20200920" class="sunday before">20</td>
+                                    <td id="day20200921" class="monday before attr0">21</td>
+                                    <td id="day20200922" class="tuesday before">22</td>
+                                    <td id="day20200923" class="wednesday before">23</td>
+                                    <td id="day20200924" class="thursday before">24</td>
+                                    <td id="day20200925" class="friday before ">25</td>
+                                    <td id="day20200926" class="saturday before">26</td>
                                 </tr>
                                 <tr>
-                                    <td id="day20200927" class="sunday after">27</td>
+                                    <td id="day20200927" class="sunday today">27</td>
                                     <td id="day20200928" class="monday after attr0">28</td>
                                     <td id="day20200929" class="tuesday after">29</td>
                                     <td id="day20200930" class="wednesday after">30</td>
@@ -194,10 +213,10 @@
                                 <tr>
                                     <td id="day20201004" class="sunday after">4</td>
                                     <td id="day20201005" class="monday after attr0">5</td>
-                                    <td id="day20201006" class="tuesday after attr0">6</td>
+                                    <td id="day20201006" class="tuesday after ">6</td>
                                     <td id="day20201007" class="wednesday after">7</td>
                                     <td id="day20201008" class="thursday after">8</td>
-                                    <td id="day20201009" class="friday after attr1">9</td>
+                                    <td id="day20201009" class="friday after ">9</td>
                                     <td id="day20201010" class="saturday after">10</td>
                                 </tr>
                                 <tr>
@@ -211,11 +230,11 @@
                                 </tr>
                                 <tr>
                                     <td id="day20201018" class="sunday after ">18</td>
-                                    <td id="day20201019" class="monday after attr0">19</td>
-                                    <td id="day20201020" class="tuesday after attr0">20</td>
-                                    <td id="day20201021" class="wednesday after attr0">21</td>
+                                    <td id="day20201019" class="monday after attr0 ">19</td>
+                                    <td id="day20201020" class="tuesday after ">20</td>
+                                    <td id="day20201021" class="wednesday after ">21</td>
                                     <td id="day20201022" class="thursday after">22</td>
-                                    <td id="day20201023" class="friday after attr1">23</td>
+                                    <td id="day20201023" class="friday after ">23</td>
                                     <td id="day20201024" class="saturday after">24</td>
                                 </tr>
                                 <tr>
@@ -254,6 +273,7 @@
     </div>
     <br><br><br><br><br><br>
 </div>
+<%#ここまでカレンダー%>
 
 <div>
 </div>
@@ -283,17 +303,277 @@
     <p>ここにカットなどのメニューを表示する メニューからリンクで予約へ進めるようにす</p>
   </div>
 
-				
-コース種類	コース名	サービス内容	時間（分）	価格（円）
-セットメニュー	スピードコース	カット、シャンプー、ブロー込み	90	2750<br>
-ヘアカット	カットコース【エステ・パック付き】	カット、エステ・パック、顔剃り、シャンプー、ブロー込み	90	3960<br>
-ヘアカット	シルバーコース(60歳以上の方)	カット、顔剃り、シャンプー、ブロー込み	90	2200<br>
-ヘアカラー	カラーコース【エステ・パック付き】	カット、カラー、エステ・パック、顔剃り、シャンプー、ブロー込み	120	7150<br>
-ヘアカラー	カラーのみ	カラー	120	3300<br>
-パーマ	パーマコース【エステ・パック付き】	カット、パーマ、エステ・パック、顔剃り、シャンプー、ブロー込み	150	8800<br>
-トリートメント	スカルプケア	頭皮の皮脂の除去、マイクロスコープカメラで育毛診断付き	10	770<br>
-その他	シャンプー・ブロー		30	1100<br>
-その他	レディースシェービング【エステ・パック付き】		60	2860<br>
+<%#メニューコンテナー%>
+
+		<div class="coupon-inner" >
+			<div class="coupon-date">
+				<table class="tacoupon" >
+										<tr>
+						<th class="category" colspan="3">
+							<span>カット</span><span>エステ・パック</span><span>顔剃り</span><span>シャンプー・ブロー</span>
+                        </th>
+					</tr>
+					<tr>
+						<th class="iconth">
+							<div class="icon">
+								<p class="blue">
+									再来								</p>
+							</div><!-- icon -->
+						</th>
+						<th>ヘアカット カットコース【エステ・パック付き】カット、エステ・パック、顔剃り、シャンプー、ブロー込み (約90分）</th>
+						<th class="mone">
+							&yen;3,960
+						</th>
+					</tr>
+					<tr>
+						<td colspan="3">■コースの説明をここに記載する◆◆◆◆◆◆◆◆◆◆◆◆◆◆◆◆◆◆◆◆◆◆◆◆◆◆◆◆◆◆◆◆◆◆◆◆◆◆◆◆◆◆◆◆◆◆◆◆◆◆◆◆◆◆</td>
+					</tr>
+
+				</table><!-- tacoupon -->
+			</div><!-- coupon-date -->
+			    <div class="coupon-btn">
+				    <div class="coupon-btn-inner">
+                         <a href="#" class="btn btn-info">メニューを追加して予約</a>
+                    </div><!-- coupon-btn-inner -->
+			</div><!-- coupon-button -->
+		</div><!-- coupon-inner -->
+
+
+		<div class="coupon-inner" >
+			<div class="coupon-date">
+				<table class="tacoupon" >
+										<tr>
+						<th class="category" colspan="3">
+							<span>カット</span><span>シャンプー・ブロー</span>
+                        </th>
+					</tr>
+					<tr>
+						<th class="iconth">
+							<div class="icon">
+								<p class="blue">
+									再来								</p>
+							</div><!-- icon -->
+						</th>
+						<th>【スピードコース】カット＋シャンプー＋ブロー(約60分）</th>
+						<th class="mone">
+							&yen;2,750
+						</th>
+					</tr>
+					<tr>
+						<td colspan="3">■コースの説明をここに記載する◆◆◆◆◆◆◆◆◆◆◆◆◆◆◆◆◆◆◆◆◆◆◆◆◆◆◆◆◆◆◆◆◆◆◆◆◆◆◆◆◆◆◆◆◆◆◆◆◆◆◆◆◆◆</td>
+					</tr>
+
+				</table><!-- tacoupon -->
+			</div><!-- coupon-date -->
+			    <div class="coupon-btn">
+				    <div class="coupon-btn-inner">
+                         <a href="#" class="btn btn-info">メニューを追加して予約</a>
+                    </div><!-- coupon-btn-inner -->
+			</div><!-- coupon-button -->
+		</div><!-- coupon-inner -->
+
+		<div class="coupon-inner" >
+			<div class="coupon-date">
+				<table class="tacoupon" >
+										<tr>
+						<th class="category" colspan="3">
+							<span>カット</span><span>顔剃り</span><span>シャンプー・ブロー</span>
+                        </th>
+					</tr>
+					<tr>
+						<th class="iconth">
+							<div class="icon">
+								<p class="blue">
+									再来								</p>
+							</div><!-- icon -->
+						</th>
+						<th>ヘアカット シルバーコース(60歳以上の方)　カット、顔剃り、シャンプー、ブロー込み(約60分) </th>
+						<th class="mone">
+							&yen;2,750
+						</th>
+					</tr>
+					<tr>
+						<td colspan="3">■コースの説明をここに記載する◆◆◆◆◆◆◆◆◆◆◆◆◆◆◆◆◆◆◆◆◆◆◆◆◆◆◆◆◆◆◆◆◆◆◆◆◆◆◆◆◆◆◆◆◆◆◆◆◆◆◆◆◆◆</td>
+					</tr>
+
+				</table><!-- tacoupon -->
+			</div><!-- coupon-date -->
+			    <div class="coupon-btn">
+				    <div class="coupon-btn-inner">
+                         <a href="#" class="btn btn-info">メニューを追加して予約</a>
+                    </div><!-- coupon-btn-inner -->
+			</div><!-- coupon-button -->
+		</div><!-- coupon-inner -->
+
+		<div class="coupon-inner" >
+			<div class="coupon-date">
+				<table class="tacoupon" >
+										<tr>
+						<th class="category" colspan="3">
+							<span>カット</span><span>カラー</span><span>エステ・パック</span><span>顔剃り</span><span>シャンプー・ブロー</span>
+                        </th>
+					</tr>
+					<tr>
+						<th class="iconth">
+							<div class="icon">
+								<p class="blue">
+									再来								</p>
+							</div><!-- icon -->
+						</th>
+						<th>ヘアカラー カラーコース【エステ・パック付き】 カット、カラー、エステ・パック、顔剃り、シャンプー、ブロー込み（約120分） </th>
+						<th class="mone">
+							&yen;7,150
+						</th>
+					</tr>
+					<tr>
+						<td colspan="3">■コースの説明をここに記載する◆◆◆◆◆◆◆◆◆◆◆◆◆◆◆◆◆◆◆◆◆◆◆◆◆◆◆◆◆◆◆◆◆◆◆◆◆◆◆◆◆◆◆◆◆◆◆◆◆◆◆◆◆◆</td>
+					</tr>
+
+				</table><!-- tacoupon -->
+			</div><!-- coupon-date -->
+			    <div class="coupon-btn">
+				    <div class="coupon-btn-inner">
+                         <a href="#" class="btn btn-info">メニューを追加して予約</a>
+                    </div><!-- coupon-btn-inner -->
+			</div><!-- coupon-button -->
+		</div><!-- coupon-inner -->
+
+		<div class="coupon-inner" >
+			<div class="coupon-date">
+				<table class="tacoupon" >
+										<tr>
+						<th class="category" colspan="3">
+							<span>カット</span><span>パーマ</span><span>エステ・パック</span><span>顔剃り</span><span>シャンプー・ブロー</span>
+                        </th>
+					</tr>
+					<tr>
+						<th class="iconth">
+							<div class="icon">
+								<p class="blue">
+									再来								</p>
+							</div><!-- icon -->
+						</th>
+						<th>パーマ パーマコース【エステ・パック付き】 カット、パーマ、エステ・パック、顔剃り、シャンプー、ブロー込み（約150分） </th>
+						<th class="mone">
+							&yen;8,800
+						</th>
+					</tr>
+					<tr>
+						<td colspan="3">■コースの説明をここに記載する◆◆◆◆◆◆◆◆◆◆◆◆◆◆◆◆◆◆◆◆◆◆◆◆◆◆◆◆◆◆◆◆◆◆◆◆◆◆◆◆◆◆◆◆◆◆◆◆◆◆◆◆◆◆</td>
+					</tr>
+
+				</table><!-- tacoupon -->
+			</div><!-- coupon-date -->
+			    <div class="coupon-btn">
+				    <div class="coupon-btn-inner">
+                         <a href="#" class="btn btn-info">このメニューにで予約</a>
+                    </div><!-- coupon-btn-inner -->
+			</div><!-- coupon-button -->
+		</div><!-- coupon-inner -->
+
+		<div class="coupon-inner" >
+			<div class="coupon-date">
+				<table class="tacoupon" >
+										<tr>
+						<th class="category" colspan="3">
+							<span>カラー</span>
+                        </th>
+					</tr>
+					<tr>
+						<th class="iconth">
+							<div class="icon">
+								<p class="blue">
+									再来								</p>
+							</div><!-- icon -->
+						</th>
+						<th>ヘアカラー カラーのみ （約120分） </th>
+						<th class="mone">
+							&yen;3,300
+						</th>
+					</tr>
+					<tr>
+						<td colspan="3">■コースの説明をここに記載する◆◆◆◆◆◆◆◆◆◆◆◆◆◆◆◆◆◆◆◆◆◆◆◆◆◆◆◆◆◆◆◆◆◆◆◆◆◆◆◆◆◆◆◆◆◆◆◆◆◆◆◆◆◆</td>
+					</tr>
+
+				</table><!-- tacoupon -->
+			</div><!-- coupon-date -->
+			    <div class="coupon-btn">
+				    <div class="coupon-btn-inner">
+                         <a href="#" class="btn btn-info">このメニューにで予約</a>
+                    </div><!-- coupon-btn-inner -->
+			</div><!-- coupon-button -->
+		</div><!-- coupon-inner -->
+
+        		<div class="coupon-inner" >
+			<div class="coupon-date">
+				<table class="tacoupon" >
+										<tr>
+						<th class="category" colspan="3">
+							<span>シャンプー・ブロー</span>
+                        </th>
+					</tr>
+					<tr>
+						<th class="iconth">
+							<div class="icon">
+								<p class="blue">
+									再来								</p>
+							</div><!-- icon -->
+						</th>
+						<th>シャンプー・ブロー （約30分） </th>
+						<th class="mone">
+							&yen;1,100
+						</th>
+					</tr>
+					<tr>
+						<td colspan="3">■コースの説明をここに記載する◆◆◆◆◆◆◆◆◆◆◆◆◆◆◆◆◆◆◆◆◆◆◆◆◆◆◆◆◆◆◆◆◆◆◆◆◆◆◆◆◆◆◆◆◆◆◆◆◆◆◆◆◆◆</td>
+					</tr>
+
+				</table><!-- tacoupon -->
+			</div><!-- coupon-date -->
+			    <div class="coupon-btn">
+				    <div class="coupon-btn-inner">
+                         <a href="#" class="btn btn-info" >このメニューにで予約</a>
+                    </div><!-- coupon-btn-inner -->
+			</div><!-- coupon-button -->
+		</div><!-- coupon-inner -->
+
+        		<div class="coupon-inner" >
+			<div class="coupon-date">
+				<table class="tacoupon" >
+										<tr>
+						<th class="category" colspan="3">
+							<span>エステ・パック</span><span>顔剃り</span>
+                        </th>
+					</tr>
+					<tr>
+						<th class="iconth">
+							<div class="icon">
+								<p class="blue">
+									再来								</p>
+							</div><!-- icon -->
+						</th>
+						<th>レディースシェービング【エステ・パック付き】 （約60分） </th>
+						<th class="mone">
+							&yen;2,860
+						</th>
+					</tr>
+					<tr>
+						<td colspan="3">■コースの説明をここに記載する◆◆◆◆◆◆◆◆◆◆◆◆◆◆◆◆◆◆◆◆◆◆◆◆◆◆◆◆◆◆◆◆◆◆◆◆◆◆◆◆◆◆◆◆◆◆◆◆◆◆◆◆◆◆</td>
+					</tr>
+
+				</table><!-- tacoupon -->
+			</div><!-- coupon-date -->
+			    <div class="coupon-btn">
+				    <div class="coupon-btn-inner">
+                         <a href="#" class="btn btn-info">このメニューにで予約</a>
+                    </div><!-- coupon-btn-inner -->
+			</div><!-- coupon-button -->
+		</div><!-- coupon-inner -->
+
+</div>
+<%#ここまでメニューコンテナー%>
+
+
     <br>
     <br>
     <br>
@@ -311,7 +591,7 @@
     <br>
     <br>
     <br>
-    <button type="button" class="btn btn-primary btn-lg">予約</button>
+    <button type="button" class="btn btn-info btn-lg">予約</button>
     <br>  
     <br>
     <br>
@@ -337,6 +617,7 @@
     <h6>お知らせ</h6>
   <div>
     <p id="news">お店からのお知らせを掲載</p>
+    
   </div>
 
     <br>
@@ -352,7 +633,6 @@
     <br>
     <br>
     <br>
-    <h6>ここに地図表示する</h6>
 
 
 
@@ -361,7 +641,7 @@
 
 
 
- <div id="footer">
+ <div id="footer_main">
         <p>&copy; 20xx ○○ xxxxxxxxxxxx.</p>
 </div>
 </div>

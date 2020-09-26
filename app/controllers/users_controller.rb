@@ -1,7 +1,7 @@
 class UsersController < ApplicationController
- 
+
   def new
-   @user = User.new
+    @user = User.new
   end
 
   def create
@@ -12,15 +12,13 @@ class UsersController < ApplicationController
     else
       render 'new'
     end
-
   end
 
   def show
-     @user = User.find_by(id: params[:id])
+    @user = User.find_by(id: params[:id])
   end
 
   def user_params
     params.require(:user).permit(:name, :address, :password, :password_confirmation, :birthday, :contact, :mail, :etc)
   end
-
 end
