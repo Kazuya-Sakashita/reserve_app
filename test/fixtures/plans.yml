@@ -1,0 +1,11 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  order: MyString
+  price: 1
+  time: 2020-09-27 19:07:31
+
+two:
+  order: MyString
+  price: 1
+  time: 2020-09-27 19:07:31

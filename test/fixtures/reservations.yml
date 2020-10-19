@@ -1,0 +1,11 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  user_id: MyString
+  event_id: MyString
+  appointed_day: 2020-10-04 16:10:08
+
+two:
+  user_id: MyString
+  event_id: MyString
+  appointed_day: 2020-10-04 16:10:08

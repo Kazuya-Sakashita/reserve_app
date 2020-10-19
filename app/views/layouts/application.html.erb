@@ -18,12 +18,13 @@
       <li><%= link_to 'HOME',root_path%></li>
       <% if logged_in? %>
       <li><%= link_to 'ログアウト',logout_path %></li>
-      <li><%= link_to '会員情報',reserves_show_path %></li>
+      <li><%= link_to '会員情報', "#" %></li>
+      <li><%= link_to '予約',"#" %></li>
+
       <% else %>
       <li><%= link_to 'ログイン',login_path %></li>
       <li><%= link_to '会員登録',new_users_path %></li>
       <% end %>
-      <li><%= link_to '予約',"#" %></li>
       <li><%= link_to 'メニュー',root_path(anchor:'menu') %></li>
       <li><%= link_to 'お店について',root_path(anchor:'about_me') %></li>
       <li><%= link_to 'お知らせ',root_path(anchor:'news') %></li>

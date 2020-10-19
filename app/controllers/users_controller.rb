@@ -7,8 +7,8 @@ class UsersController < ApplicationController
   def create
     @user = User.new(user_params)
     if @user.save
-      log_in @user.id
-      redirect_to users_show_path
+      log_in @user
+      redirect_to users_show_path(@user.id)
     else
       render 'new'
     end

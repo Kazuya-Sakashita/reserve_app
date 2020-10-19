@@ -1,24 +1,31 @@
 <br><br><br>
 
-<div class ="col-lg-6 offset-md-2">
+<div class="col-lg-6 offset-md-2">
 
-<h1>お客様情報</h1>
+  <h1>お客様情報</h1>
 
-<h6>いつもご利用ありがとうございます。</h6>
+  <h6>いつもご利用ありがとうございます。</h6>
 
-<div class="form-group">
+  <div class="form-group">
 
-  <p class = "form-control">名前: <%= @user.name %></p>
-  <p class = "form-control">メールアドレス: <%= @user.mail %></p>
-  <p class = "form-control">電話番号: <%= @user.contact %></p>
-</div>
-必要な情報を表示
-
-<br><br><br><br><br><br><br><br><br>
-<p>予約の案内</p>
-<p>これまでのご利用履歴を表示する</p>
+    <p class="form-control">名前: <%= current_user.name %></p>
+    <p class="form-control">メールアドレス: <%= current_user.mail %></p>
+    <p class="form-control">電話番号: <%= current_user.contact %></p>
+  </div>
+  <br><br><br><br><br><br><br><br><br>
+  <p>必要な情報を表示</p>
 
 
 
-<p>ここに履歴を表示させる</p>
+  <%= link_to '予約',reserves_new_path(@user) %>
+
+
+
+  <br><br><br><br><br><br><br><br><br>
+  <p>予約の案内</p>
+  <p>これまでのご利用履歴を表示する</p>
+
+
+
+
 </div>
