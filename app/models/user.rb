@@ -3,8 +3,8 @@ class User < ApplicationRecord
     validates :password, presence: true, length: { minimum: 6 }
     validates :mail, presence: true, uniqueness: true
 
-    has_many :reserves
+    has_many :reservations
     has_many :plans
-    has_many :histroy
+    has_many :histories
 
 end

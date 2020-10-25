@@ -18,7 +18,7 @@ Rails.application.routes.draw do
   get '/users/:users_id/reserves/:id/edit', to: "reserves#edit", as: "reserves_edit"
   post '/users/:users_id/reserves/create', to: "reserves#create", as: "reserves_create"
   post '/users/:users_id/reserves/:id/show', to: "reserves#show", as: "reserves_show"
-  
+  get '/users/:users_id/reserves/:id/show', to: "reserves#show"
 
 
   
