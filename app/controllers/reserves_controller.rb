@@ -16,11 +16,13 @@ class ReservesController < ApplicationController
   end
 
   def index
+
   
   end
 
   def show
-
+    @user_id = current_user.id
+    @reservations = Reservation.where("user_id = #{@user_id}" )
   end
 
   def edit

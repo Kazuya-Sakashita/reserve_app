@@ -1,4 +1,28 @@
-<h1>Reserves#show</h1>
-<p>Find me in app/views/reserves/show.html.erb</p>
+<br><br><br><br><br>
 
 
+<h1>ご来店履歴</h1>
+
+<div class="col-md-6 offset-md-1">
+
+  <p class="form-control">名前: <%= current_user.name %></p>
+  <br>
+
+  <table class="table table-bordered">
+    <tr>
+      <th>施術日</th>
+      <th>コース</th>
+      <th>会員番号</th>
+
+    </tr>
+
+
+    <% @reservations.each do |re| %>
+    <tr>
+      <td><%= re.appointed_day %></td>
+      <td><%= re.plan_id %></td>
+      <td><%= re.user_id %></td>
+    </tr>
+    <% end %>
+  </table>
+</div>
