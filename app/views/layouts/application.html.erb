@@ -16,24 +16,30 @@
 
 <body data-turbolinks="false">
   <header id="header">
-    <ul>
-      <li><%= link_to 'HOME',root_path%></li>
-      <% if logged_in? %>
-      <li><%= link_to 'ログアウト',logout_path %></li>
-      <li><%= link_to '会員情報', users_show_path(id: current_user) %></li>
-      <li><%= link_to '予約',reserves_new_path(current_user.id) %></li>
+    <div class="container">
+       <h1><a href="/">Ohana Co.</a></h1>
+      <nav>
+        <ul>
+          <li><%= link_to 'HOME',root_path%></li>
+        <% if logged_in? %>
+        <li><%= link_to 'ログアウト',logout_path %></li>
+        <li><%= link_to '会員情報', users_show_path(id: current_user) %></li>
+        <li><%= link_to '予約',reserves_new_path(current_user.id) %></li>
 
-      <% else %>
-      <li><%= link_to 'ログイン',login_path %></li>
-      <li><%= link_to '会員登録',new_users_path %></li>
-      <% end %>
-      <li><%= link_to 'メニュー',root_path(anchor:'menu') %></li>
-      <li><%= link_to 'お店について',root_path(anchor:'about_me') %></li>
-      <li><%= link_to 'お知らせ',root_path(anchor:'news') %></li>
-      <li><%= link_to '管理者メニュー', events_path %></li>
-    </ul>
-    <br> <br> <br>
+        <% else %>
+        <li><%= link_to 'ログイン',login_path %></li>
+        <li><%= link_to '会員登録',new_users_path %></li>
+        <% end %>
+        <li><%= link_to 'メニュー',root_path(anchor:'menu') %></li>
+        <li><%= link_to 'お店について',root_path(anchor:'about_me') %></li>
+        <li><%= link_to 'お知らせ',root_path(anchor:'news') %></li>
+        <li><%= link_to '管理者メニュー', events_path %></li>
+        </ul>
+        </nav>
+    </div>
   </header>
+  <div class="container"></div>
+
   <%= yield %>
 </body>
 
