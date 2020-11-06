@@ -1,6 +1,11 @@
 <div class="col-lg-10 offset-md-1">
   <div class="container-fluid">
     <div class="main-container">
+      <br>
+      <br>
+      <br>
+      <br>
+      <br>
       <h6>このページはサンプルとして作成されたものです</h6>
 
 
@@ -113,11 +118,10 @@
         <%= render 'calendar' %>
         <%#ここまでカレンダーコンテナー%>
 
-
-        <button type="button" class="btn btn-info btn-lg">予約</button>
+        <br><br><br><br><br>
 
         <br>
-        <br>
+        <%= button_to '予約' , {:controller => "users", :action => "new"}, {:method => :get, class: "btn btn-info btn-lg"} %>
         <br>
         <br>
         <br>

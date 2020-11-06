@@ -23,6 +23,7 @@ class ReservesController < ApplicationController
   def show
     @user_id = current_user.id
     @reservations = Reservation.where("user_id = #{@user_id}" )
+
   end
 
   def edit

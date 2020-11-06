@@ -4,58 +4,61 @@
 <br>
 
 <div>
-    <div class ="col-lg-6 offset-md-2">
+  <div class="col-lg-6 offset-md-2">
+    <h6>会員登録済みの方は下記ボタンよりログインをお願いいたします。</h6>
+    <%= button_to 'login', {:controller => "sessions", :action => "new"}, {:method => :get, class: "btn btn-info btn-lg"} %>
+    <br><br><br>
 
-<h1>ユーザー登録</h1>
+    <h1>ユーザー登録</h1>
 
-<h6>この度は数多くあるお店の中から選んで頂き、誠にありがとうございます。</h6>
-<h6>お手数ですが、必要事項を入力頂き、会員登録をよろしくお願致します。</h6><br>
+    <h6>この度は数多くあるお店の中から選んで頂き、誠にありがとうございます。</h6>
+    <h6>お手数ですが、必要事項を入力頂き、会員登録をよろしくお願致します。</h6><br>
 
 
-<%= form_for(@user, url: create_users_path) do |f| %>
+    <%= form_for(@user, url: create_users_path) do |f| %>
     <div class="form-group">
-    <%= f.label :name, "名前" %>
-    <%=f.text_field :name, :placeholder => "（例）山田太郎" , class:"form-control" %>
+      <%= f.label :name, "名前" %>
+      <%=f.text_field :name, :placeholder => "（例）山田太郎" , class:"form-control" %>
     </div>
 
     <div class="form-group">
-    <%= f.label :address, "住所" %>
-    <%=f.text_field :address, :placeholder => "（例）大阪府大阪市東住吉区西今川4-23-12" ,  class:"form-control" %>
+      <%= f.label :address, "住所" %>
+      <%=f.text_field :address, :placeholder => "（例）大阪府大阪市東住吉区西今川4-23-12" ,  class:"form-control" %>
     </div>
 
     <div class="form-group">
-    <%= f.label :password, "パスワード" %>
-    <%=f.password_field :password, :placeholder => "（例）パスワードを設定ください" ,  class:"form-control" %>
+      <%= f.label :password, "パスワード" %>
+      <%=f.password_field :password, :placeholder => "（例）パスワードを設定ください" ,  class:"form-control" %>
     </div>
 
     <div class="form-group">
-    <%= f.label :password_confirmation, "パスワード（再確認）" %>
-    <%=f.password_field :password_confirmation, :placeholder => "（例）もう一度パスワードを入力ください" ,  class:"form-control" %>
+      <%= f.label :password_confirmation, "パスワード（再確認）" %>
+      <%=f.password_field :password_confirmation, :placeholder => "（例）もう一度パスワードを入力ください" ,  class:"form-control" %>
     </div>
 
     <div class="form-group">
-    <%= f.label :birthday, "誕生日" %>
-    <%=f.text_field :birthday, :placeholder => "（例）2020/01/01" , class:"form-control" %>
+      <%= f.label :birthday, "誕生日" %>
+      <%=f.text_field :birthday, :placeholder => "（例）2020/01/01" , class:"form-control" %>
     </div>
 
     <div class="form-group">
-    <%= f.label :phone_number, "電話番号" %>
-    <%=f.text_field :contact, :placeholder => "（例）09012345678" ,  class:"form-control" %>
+      <%= f.label :phone_number, "電話番号" %>
+      <%=f.text_field :contact, :placeholder => "（例）09012345678" ,  class:"form-control" %>
     </div>
 
     <div class="form-group">
-    <%= f.label :email, "メールアドレス" %>
-    <%=f.text_field :mail, :placeholder => "（例）123@aa.bb.jp" ,  class:"form-control" %>
+      <%= f.label :email, "メールアドレス" %>
+      <%=f.text_field :mail, :placeholder => "（例）123@aa.bb.jp" ,  class:"form-control" %>
     </div>
 
     <div class="form-group">
-    <%= f.label :etc, "その他" %>
-    <%=f.text_area :etc, :placeholder => "（例）ヘアスタイルなどについてのお悩みなど、なんでもお気軽に入力ください",  class:"form-control" %>
+      <%= f.label :etc, "その他" %>
+      <%=f.text_area :etc, :placeholder => "（例）ヘアスタイルなどについてのお悩みなど、なんでもお気軽に入力ください",  class:"form-control" %>
     </div>
 
     <%= f.submit "会員登録" , class:"btn btn-primary" %>
-    
-<% end %>
 
-</div>
+    <% end %>
+
+  </div>
 </div>
