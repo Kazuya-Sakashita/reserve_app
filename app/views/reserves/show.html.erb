@@ -17,12 +17,12 @@
     </tr>
 
 
-    <% @reservations.each do |re| %>
+    <% @reservations.each do |reserve| %>
     <tr>
-      <td><%= re.appointed_day %></td>
-      <td><%= re.plan_id %></td>
-      <td><%= re.user_id %></td>
-      <td><%= re.memo %></td>
+      <td><%= reserve.appointed_day %></td>
+      <td><%= reserve.plan_id %></td>
+      <td><%= reserve.user_id %></td>
+      <td><%= reserve.memo %></td>
 
     </tr>
     <% end %>
