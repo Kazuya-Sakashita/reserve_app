@@ -2,6 +2,10 @@ Rails.application.routes.draw do
   root 'reserves#index'
   resources :events
 
+  namespace :admin do
+    resources :users
+  end
+
 # 会員情報登録
   get 'users/new', to:'users#new', as:'new_users'
   post 'users/create', to:'users#create', as:'create_users'

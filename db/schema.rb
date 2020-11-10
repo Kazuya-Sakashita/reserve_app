@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20201009213133) do
+ActiveRecord::Schema.define(version: 20201110123020) do
 
   create_table "events", force: :cascade do |t|
     t.string "title"
@@ -34,6 +34,7 @@ ActiveRecord::Schema.define(version: 20201009213133) do
     t.datetime "time"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.text "description"
   end
 
   create_table "reservations", force: :cascade do |t|
@@ -43,6 +44,7 @@ ActiveRecord::Schema.define(version: 20201009213133) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.string "plan_id"
+    t.text "memo"
   end
 
   create_table "users", force: :cascade do |t|
@@ -56,6 +58,7 @@ ActiveRecord::Schema.define(version: 20201009213133) do
     t.string "etc"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.integer "admin"
   end
 
 end
