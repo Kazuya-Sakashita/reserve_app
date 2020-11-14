@@ -1,0 +1,44 @@
+body {
+  font-family: 'coueiwe New', monospace;
+  font-size: 14px;
+}
+
+table {
+  border-collapse: collapse;
+  border: 2px solid #eee;
+}
+
+thead,
+tfoot {
+  background: #eee;
+}
+
+th,
+td {
+  padding: 8px;
+  text-align: center;
+}
+
+//毎週月曜日（2番目に配置されている日）を休み（赤くする）
+tbody td:nth-child(2) {
+  color: red;
+}
+
+.calendar_today {
+  font-weight: bold;
+}
+
+td.disabled {
+  opacity: 0.3;
+}
+
+td.today {
+  font-weight: bold;
+}
+
+#prev,
+#next,
+#today {
+  cursor: pointer;
+  user-select: none;
+}
