@@ -6,13 +6,13 @@
 <div class="col-md-6 offset-md-1">
 
   <p class="form-control">名前: <%= current_user.name %></p>
-  <br>
+  <p class="form-control">会員番号: <%= current_user.id %></p> <br>
 
   <table class="table table-bordered">
     <tr>
       <th>施術日</th>
       <th>コース</th>
-      <th>会員番号</th>
+      <th>コース名</th>
       <th>ご要望</th>
     </tr>
 
@@ -21,7 +21,7 @@
     <tr>
       <td><%= reserve.appointed_day %></td>
       <td><%= reserve.plan_id %></td>
-      <td><%= reserve.user_id %></td>
+      <td><%= reserve.plan.order %></td>
       <td><%= reserve.memo %></td>
 
     </tr>
