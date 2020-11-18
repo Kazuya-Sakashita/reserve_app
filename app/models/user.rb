@@ -4,7 +4,7 @@ class User < ApplicationRecord
     validates :mail, presence: true, uniqueness: true
 
     has_many :reservations
-    has_many :plans
+    has_many :plans, through: :reservations
     has_many :histories
 
 end
