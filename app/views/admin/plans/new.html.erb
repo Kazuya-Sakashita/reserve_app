@@ -1,0 +1,22 @@
+<div class="col-lg-10 offset-md-1"><br><br><br><br><br><br>
+  <div>
+    <%= form_for @plan, url: {action: "create"}, html: {class: "form-group"} do |f| %>
+    <div class="form-group">
+      <%= f.label :order, "コース名" %>
+      <%=f.text_field :order, :placeholder => "（例）シャンプーコース" , class:"form-control" %>
+
+      <%= f.label :price, "価格（税込）" %>
+      <%=f.text_field :price, :placeholder => "（例）3500円" , class:"form-control" %>
+
+      <%= f.label :time, "施術時間" %>
+      <%=f.text_field :time, :placeholder => "（例）120分" , class:"form-control" %>
+
+      <%= f.label :description, "説明" %>
+      <%=f.text_area :description, :placeholder => "コースのアピールポイントなどを記載" , class:"form-control" %>
+
+    </div>
+    <%= f.submit "保存" , class:"btn btn-primary" %>
+    <% end %>
+    <%= link_to '一覧' , {controller: :plans, action: :index} , id: :link, class: :menu %>
+  </div>
+</div>

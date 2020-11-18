@@ -1,0 +1,32 @@
+<div class="col-lg-10 offset-md-1"><br><br><br><br><br><br>
+  <h2>MENU情報（内容）修正</h2>
+
+  <%=form_for(@plan, url: admin_plan_path(@plan), html: {method: "patch"}) do |f| %>
+  <%= f.label :order, "コース名" %>
+  <%= f.text_field :order, placeholder: "enter :order", class:"form-control" %>
+  <% if @plan.errors.messages[:order].any? %>
+  <span class="error"><%= @plan.errors.messages[:order][0] %></span>
+  <% end %><br>
+  <%= f.label :price, "価格（税込）" %>
+  <%= f.text_field :price, placeholder: "enter :price", class:"form-control"  %>
+  <% if @plan.errors.messages[:price].any? %>
+  < span class="error"><%= @plan.errors.messages[:price][0] %></>
+  <% end %><br>
+  <%= f.label :time, "施術時間" %>
+  <%= f.text_field :time, placeholder: "enter :time", class:"form-control" %>
+  <% if @plan.errors.messages[:time].any? %>
+  <span class="error"><%= @plan.errors.messages[:time][0] %></span>
+  <% end %><br>
+  <%= f.label :description, "説明" %>
+  <%= f.text_area :description, placeholder: "enter :description", class:"form-control" %>
+  <% if @plan.errors.messages[:description].any? %>
+  <span class="error"><%= @plan.errors.messages[:description][0] %></span>
+  <% end %><br>
+
+
+  <%= f.submit "Update", class: "btn btn-primary" %>
+  <% end %>
+
+  <%= link_to '一覧' , {controller: :plans, action: :index} , id: :link, class: :menu %>
+
+</div>
