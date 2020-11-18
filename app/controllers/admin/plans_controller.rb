@@ -1,8 +1,8 @@
 class Admin::PlansController < ApplicationController
   before_action :admin_user
+  before_action :set_plan
 
   def index
-    @plans = Plan.all
   end
 
   def new
@@ -10,7 +10,7 @@ class Admin::PlansController < ApplicationController
   end
 
   def create
-      if @plan = Plan.create(plan_params)
+      if Plan.create(plan_params)
         redirect_to admin_plans_path
       else
         render 'new'
@@ -19,7 +19,6 @@ class Admin::PlansController < ApplicationController
 
 
   def show
-    @plans = Plan.all
     @plan = Plan.find_by(id: params[:id])
   end
 
@@ -38,13 +37,16 @@ class Admin::PlansController < ApplicationController
   end
 
   def destroy
-    @plans = Plan.all
     plan = Plan.find_by(id: params[:id])
     if plan.destroy 
       redirect_to admin_plans_path
     else
       render:index
     end
+  end
+
+  def set_plan
+    @plans = Plan.all
   end
 
   private
@@ -55,4 +57,5 @@ class Admin::PlansController < ApplicationController
     def admin_user
       redirect_to(root_path) unless current_user.admin?
     end
+  
 end
