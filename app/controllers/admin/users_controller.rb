@@ -1,5 +1,6 @@
 class Admin::UsersController < ApplicationController
   before_action :admin_user
+  before_action :set_user
 
   def index
     @users = User.all.order("created_at DESC")
@@ -37,6 +38,10 @@ class Admin::UsersController < ApplicationController
     else
       render:index
     end
+  end
+
+  def set_user
+    @users = User.all
   end
 
   private
