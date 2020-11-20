@@ -35,4 +35,9 @@ class ReservesController < ApplicationController
   def user_params
     params.require(:user).permit(:name, :address, :password, :password_confirmation, :birthday, :contact, :mail, :etc)
   end
+
+
+  def admin_user
+    redirect_to(root_path) unless current_user.admin?
+  end
 end
