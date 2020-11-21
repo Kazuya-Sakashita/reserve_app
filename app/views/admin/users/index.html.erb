@@ -17,7 +17,7 @@
       <% @users.each do |user| %>
       <tr>
         <td><%= link_to '修正', edit_admin_user_path(user.id) %></td>
-        <td><%= link_to "削除", "users/#{user.id}", method: :destroy, data: { confirm: '削除しますか？' } %></td>
+        <td><%= link_to "削除", "users/#{user.id}", method: :delete, data: { confirm: '削除しますか？' } %></td>
         <td><%= user.id %></td>
         <td><%= user.name %></td>
         <td><%= user.mail %></td>
