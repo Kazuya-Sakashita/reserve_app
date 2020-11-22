@@ -12,8 +12,7 @@
     <%# フォーム内容 %>
     <div class="form-group">
       <%= f.label :plan_id, "メニュー" %>
-      <%= f.select :plan_id, [["カットコース", "1"], ["スピードコース", "2"], ["シルバーコー", "3"], ["パーマコース", "4"],
-                              ["ヘアーカラーコース", "5"], ["シャンプーブローコース", "6"], ["レディースシェービング", "7"]], include_blank: "選択して下さい", class:"form-control" %>
+      <%= f.collection_select :plan_id,Plan.all, :id, :order %>
     </div>
     <div class="form-group">
       <%= f.label :user_id, "会員番号(user_id)" %>
