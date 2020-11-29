@@ -29,11 +29,11 @@ class ReservesController < ApplicationController
   private
 
   def reservation_params
-    params.require(:reservation).permit(:plan_id, :user_id, :event_id, :appointed_day, :memo)
+    params.require(:reservation).permit(:plan_id, :user_id, :event_id, :reservation_date)
   end
 
   def user_params
-    params.require(:user).permit(:name, :address, :password, :password_confirmation, :birthday, :contact, :mail, :etc)
+    params.require(:user).permit(:name, :address, :password, :password_confirmation, :birthday, :phone_number, :email, :etc)
   end
 
 

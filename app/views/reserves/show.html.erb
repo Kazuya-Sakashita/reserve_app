@@ -13,16 +13,14 @@
       <th>施術日</th>
       <th>コース</th>
       <th>コース名</th>
-      <th>ご要望</th>
     </tr>
 
 
     <% @reservations.each do |reserve| %>
     <tr>
-      <td><%= reserve.appointed_day %></td>
+      <td><%= reserve.reservation_date %></td>
       <td><%= reserve.plan_id %></td>
       <td><%= reserve.plan.order %></td>
-      <td><%= reserve.memo %></td>
 
     </tr>
     <% end %>
