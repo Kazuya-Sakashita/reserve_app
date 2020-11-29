@@ -1,0 +1,2 @@
+class ShiftTable < ApplicationRecord
+end
