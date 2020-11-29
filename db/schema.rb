@@ -10,9 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-
-ActiveRecord::Schema.define(version: 20201110123020) do
-
+ActiveRecord::Schema.define(version: 20201128235610) do
 
   create_table "events", force: :cascade do |t|
     t.string "title"
@@ -42,11 +40,31 @@ ActiveRecord::Schema.define(version: 20201110123020) do
   create_table "reservations", force: :cascade do |t|
     t.string "user_id"
     t.string "event_id"
-    t.datetime "appointed_day"
+    t.datetime "reservation_date"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.string "plan_id"
-    t.text "memo"
+    t.text "status"
+    t.string "reservation_block_number"
+  end
+
+  create_table "shift_tables", force: :cascade do |t|
+    t.integer "staff_id"
+    t.string "staff_block"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "staff_tables", force: :cascade do |t|
+    t.string "name"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "time_blocks", force: :cascade do |t|
+    t.text "time_block"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
   end
 
   create_table "users", force: :cascade do |t|
@@ -55,8 +73,8 @@ ActiveRecord::Schema.define(version: 20201110123020) do
     t.string "address"
     t.string "password_digest"
     t.date "birthday"
-    t.string "contact"
-    t.string "mail"
+    t.string "phone_number"
+    t.string "email"
     t.string "etc"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
