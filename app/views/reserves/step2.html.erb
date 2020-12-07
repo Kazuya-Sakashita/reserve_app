@@ -1,0 +1,12 @@
+<div class="col-lg-6 offset-md-2"><br><br><br><br><br><br>
+
+
+<%= form_for @reservation, url: step3_reserves_path, method: :get do |f| %>
+
+  メニュー選択
+  <%= f.label :plan_id, "プラン選択" %>
+  <%=f.text_field :plan_id, class:"form-control" %><br>
+  <%= f.submit 'Step3へ' %>
+<% end %>
+
+</div>
