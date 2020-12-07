@@ -4,7 +4,8 @@ class CreatePlans < ActiveRecord::Migration[5.1]
       t.string :order
       t.integer :price
       t.datetime :time
-
+      t.text :time_block
+      t.text :description
       t.timestamps
     end
   end

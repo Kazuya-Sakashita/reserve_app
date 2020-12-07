@@ -51,7 +51,7 @@ class Admin::PlansController < ApplicationController
 
   private
     def plan_params
-      params.require(:plan).permit(:order, :price, :time, :description, :block_count)
+      params.require(:plan).permit(:order, :price, :time, :description, :time_block)
     end
 
     def admin_user

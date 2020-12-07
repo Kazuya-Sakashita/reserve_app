@@ -10,20 +10,17 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20201129003447) do
+ActiveRecord::Schema.define(version: 20201206073058) do
 
-  create_table "events", force: :cascade do |t|
-    t.string "title"
-    t.string "body"
-    t.datetime "start_date"
-    t.datetime "end_date"
+  create_table "blocks", force: :cascade do |t|
+    t.text "block"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
 
-  create_table "histories", force: :cascade do |t|
-    t.integer "user_id"
-    t.integer "reservation_id"
+  create_table "frames", force: :cascade do |t|
+    t.integer "staff_id"
+    t.text "staff_block"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
@@ -32,54 +29,40 @@ ActiveRecord::Schema.define(version: 20201129003447) do
     t.string "order"
     t.integer "price"
     t.datetime "time"
+    t.text "time_block"
+    t.text "description"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.text "description"
-    t.string "block_conut"
   end
 
   create_table "reservations", force: :cascade do |t|
-    t.string "user_id"
-    t.string "event_id"
-    t.datetime "reservation_date"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-    t.string "plan_id"
-    t.text "status"
-    t.string "reservation_block_number"
-  end
-
-  create_table "shift_tables", force: :cascade do |t|
+    t.integer "user_id"
     t.integer "staff_id"
-    t.string "staff_block"
+    t.integer "plan_id"
+    t.datetime "reservation_date"
+    t.text "reservation_block"
+    t.integer "status"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
 
-  create_table "staff_tables", force: :cascade do |t|
+  create_table "staffs", force: :cascade do |t|
     t.string "name"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-  end
-
-  create_table "time_blocks", force: :cascade do |t|
-    t.text "time_block"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
 
   create_table "users", force: :cascade do |t|
-    t.integer "user_id"
     t.string "name"
-    t.string "address"
+    t.text "address"
     t.string "password_digest"
     t.date "birthday"
     t.string "phone_number"
     t.string "email"
     t.string "etc"
+    t.integer "admin"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.integer "admin"
   end
 
 end
