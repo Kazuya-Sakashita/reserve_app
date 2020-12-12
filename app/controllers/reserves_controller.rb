@@ -1,4 +1,6 @@
 class ReservesController < ApplicationController
+# include ActiveModel::Attributes
+# before_action :reservation_params, only: [:step1, :step2, :step3]
 
   def new
    @reservation = Reservation.new
@@ -11,10 +13,12 @@ class ReservesController < ApplicationController
   end
 
   def step2
+   binding.pry
     # step1で入力した値をsessionに保存
     session[:staff_id] = reservation_params[:staff_id]
-    session[:reservation_date] = reservation_params[:reservation_date]
+    session[:reservation_date] = DateTime.new(params[:reservation]["reservation_date(1i)"].to_i,params[:reservation]["reservation_date(2i)"].to_i,params[:reservation]["reservation_date(3i)"].to_i)
     @reservation = Reservation.new
+    # binding.pry
 
   end
   def step3
@@ -34,15 +38,13 @@ class ReservesController < ApplicationController
     )
     @reservation.user_id = current_user.id
     @reservation.status = 0
-    # binding.pry
-
+    binding.pry
       if @reservation.save
         redirect_to reserves_show_path(current_user.id, @reservation)
       else
         render 'reserves/step1'
       end
   end
-
 
   def index
   end
@@ -61,7 +63,9 @@ class ReservesController < ApplicationController
   private
 
   def reservation_params
-    params.require(:reservation).permit(:plan_id, :user_id, :staff_id, :reservation_date, :reservation_block, :status)
+    params  
+      .require(:reservation)
+      .permit(:plan_id, :user_id, :staff_id, :reservation_block, :status, :reservation_date )
   end
 
 

@@ -1,9 +1,10 @@
 <div class="col-lg-6 offset-md-2"><br><br><br><br><br><br>
 
   <%= form_for(@reservation, url:create_reserves_path ) do |f| %>
-  <%= f.label :time_block, "予約希望時間" %>
-  <%=f.text_field :reservation_block, class:"form-control" %>
+  <%= f.label :reservation_block, "予約希望時間" %>
+  <%= f.collection_select :reservation_block, Block.all, :id, :block, :prompt => "メニューを選択" %><br><br><br><br>
+
   <%= f.submit '予約' %>
-<% end %>
+  <% end %>
 
 </div>
