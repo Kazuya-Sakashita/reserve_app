@@ -9,12 +9,13 @@ class ReservesController < ApplicationController
   def step1
     @reservation = Reservation.new
     @user = User.find_by(id: params[:id])
-
+  
   end
 
   def step2
-   binding.pry
-    # step1で入力した値をsessionに保存
+    # binding.pry
+
+   # step1で入力した値をsessionに保存
     session[:staff_id] = reservation_params[:staff_id]
     session[:reservation_date] = DateTime.new(params[:reservation]["reservation_date(1i)"].to_i,params[:reservation]["reservation_date(2i)"].to_i,params[:reservation]["reservation_date(3i)"].to_i)
     @reservation = Reservation.new
@@ -22,9 +23,14 @@ class ReservesController < ApplicationController
 
   end
   def step3
+    @bloks = Block.all
     # step2で入力した値をsessionに保存
     session[:plan_id] = reservation_params[:plan_id]
+    # binding.pry
+    @free_block = Block.pluck(:id)-Reservation.where(reservation_date:session[:reservation_date]).pluck(:reservation_block).map(&:to_i)
+    # binding.pry
     @reservation = Reservation.new
+    @time_blocks = Block.where(id: [@free_block])
 
   end
 
@@ -38,7 +44,7 @@ class ReservesController < ApplicationController
     )
     @reservation.user_id = current_user.id
     @reservation.status = 0
-    binding.pry
+    # binding.pry
       if @reservation.save
         redirect_to reserves_show_path(current_user.id, @reservation)
       else

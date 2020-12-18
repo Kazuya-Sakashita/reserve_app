@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20201206073058) do
+ActiveRecord::Schema.define(version: 20201216220217) do
 
   create_table "blocks", force: :cascade do |t|
     t.text "block"
@@ -39,7 +39,7 @@ ActiveRecord::Schema.define(version: 20201206073058) do
     t.integer "user_id"
     t.integer "staff_id"
     t.integer "plan_id"
-    t.datetime "reservation_date"
+    t.date "reservation_date"
     t.text "reservation_block"
     t.integer "status"
     t.datetime "created_at", null: false

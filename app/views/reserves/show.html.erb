@@ -11,6 +11,7 @@
   <table class="table table-bordered">
     <tr>
       <th>施術日</th>
+      <th>時間</th>
       <th>スタイリスト</th>
       <th>コース</th>
       <th>コース名</th>
@@ -19,11 +20,11 @@
 
     <% @reservations.each do |reserve| %>
     <tr>
-      <td><%= reserve.reservation_date %></td>
+      <td><%= reserve.reservation_date.strftime('%Y年%m月%d日') %></td>
+      <td><%= reserve.reservation_block %> </td>
       <td><%= reserve.staff.name %></td>
       <td><%= reserve.plan_id %></td>
       <td><%= reserve.plan.order %></td>
-
     </tr>
     <% end %>
   </table>

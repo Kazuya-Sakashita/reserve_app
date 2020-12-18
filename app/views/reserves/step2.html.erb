@@ -4,8 +4,8 @@
   <%= form_for @reservation, url: step3_reserves_path, method: :get do |f| %>
 
   メニュー選択
-  <%= f.label :plan_id, "プラン選択" %>
-  <%= f.collection_select :plan_id, Plan.all, :id, :order, :prompt => "メニューを選択" %><br><br><br><br>
+  <%= f.label :plan_id, "プラン選択" %><br><br>
+  <%= f.collection_select :plan_id, Plan.all, :id, :order, :prompt => "メニューを選択" %><br><br>
 
   <%= f.submit 'Step3へ' %>
   <% end %>

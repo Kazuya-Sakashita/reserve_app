@@ -10,7 +10,7 @@
 
     <div class="form-group">
       <%= f.label :reservation_date, "予約希日時を選択ください" %><br>
-      <%= f.date_select :reservation_date, {}, class: 'input-min' %>
+      <%= f.date_select :reservation_date, {:use_two_digit_numbers => true}, class: 'input-min' %>
     </div>
     <%= f.submit 'Step2へ' %>
     <% end %>
