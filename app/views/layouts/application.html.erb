@@ -22,7 +22,7 @@
         <% if logged_in? %>
         <li><%= link_to 'ログアウト',logout_path %></li>
         <li><%= link_to '会員情報', users_show_path(id: current_user) %></li>
-        <li><%= link_to '予約',reserves_new_path(current_user.id) %></li>
+        <li><%= link_to '予約', step1_reserves_path(current_user) %></li>
         <% else %>
         <li><%= link_to 'ログイン',login_path %></li>
         <li><%= link_to '会員登録',new_users_path %></li>

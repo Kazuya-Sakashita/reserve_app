@@ -10,22 +10,17 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
+ActiveRecord::Schema.define(version: 20201216220217) do
 
-ActiveRecord::Schema.define(version: 20201110123020) do
-
-
-  create_table "events", force: :cascade do |t|
-    t.string "title"
-    t.string "body"
-    t.datetime "start_date"
-    t.datetime "end_date"
+  create_table "blocks", force: :cascade do |t|
+    t.text "block"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
 
-  create_table "histories", force: :cascade do |t|
-    t.integer "user_id"
-    t.integer "reservation_id"
+  create_table "frames", force: :cascade do |t|
+    t.integer "staff_id"
+    t.text "staff_block"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
@@ -34,33 +29,40 @@ ActiveRecord::Schema.define(version: 20201110123020) do
     t.string "order"
     t.integer "price"
     t.datetime "time"
+    t.text "time_block"
+    t.text "description"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.text "description"
   end
 
   create_table "reservations", force: :cascade do |t|
-    t.string "user_id"
-    t.string "event_id"
-    t.datetime "appointed_day"
+    t.integer "user_id"
+    t.integer "staff_id"
+    t.integer "plan_id"
+    t.date "reservation_date"
+    t.text "reservation_block"
+    t.integer "status"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.string "plan_id"
-    t.text "memo"
+  end
+
+  create_table "staffs", force: :cascade do |t|
+    t.string "name"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
   end
 
   create_table "users", force: :cascade do |t|
-    t.integer "user_id"
     t.string "name"
-    t.string "address"
+    t.text "address"
     t.string "password_digest"
     t.date "birthday"
-    t.string "contact"
-    t.string "mail"
+    t.string "phone_number"
+    t.string "email"
     t.string "etc"
+    t.integer "admin"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.integer "admin"
   end
 
 end

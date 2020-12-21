@@ -1,0 +1,2 @@
+class StaffTable < ApplicationRecord
+end

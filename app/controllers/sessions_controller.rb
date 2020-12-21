@@ -7,9 +7,9 @@ class SessionsController < ApplicationController
 
   def create
     # メール & 電話での実装
-    user = User.find_by(mail: params[:contact].downcase)
+    user = User.find_by(email: params[:email].downcase)
     if user.nil?
-      user = User.find_by(contact: params[:contact].downcase)
+      user = User.find_by(phone_number: params[:phone_number].downcase)
     end
     if user && user.authenticate(params[:session][:password])
       log_in user
@@ -24,4 +24,6 @@ class SessionsController < ApplicationController
     log_out
     redirect_to root_path
   end
+
+
 end
