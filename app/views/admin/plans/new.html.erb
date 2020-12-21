@@ -3,16 +3,16 @@
     <%= form_for @plan, url: {action: "create"}, html: {class: "form-group"} do |f| %>
     <div class="form-group">
       <%= f.label :order, "コース名" %>
-      <%=f.text_field :order, :placeholder => "（例）シャンプーコース" , class:"form-control" %>
+      <%=f.text_field :order, :placeholder => "コース名を入力" , class:"form-control" %>
 
       <%= f.label :price, "価格（税込）" %>
-      <%=f.text_field :price, :placeholder => "（例）3500円" , class:"form-control" %>
+      <%=f.text_field :price, :placeholder => "サービス価格を入力" , class:"form-control" %>
 
       <%= f.label :time, "施術時間" %>
-      <%=f.text_field :time, :placeholder => "（例）120分" , class:"form-control" %>
+      <%=f.text_field :time, :placeholder => "施術にかかる時間を入力" , class:"form-control" %>
 
       <%= f.label :time_block, "ブロック数" %>
-      <%=f.text_field :time_block, :placeholder => "（例）120分の場合は4を記載" , class:"form-control" %>
+      <%=f.text_field :time_block, :placeholder => "ブロック占有数を入力" , class:"form-control" %>
 
       <%= f.label :description, "説明" %>
       <%=f.text_area :description, :placeholder => "コースのアピールポイントなどを記載" , class:"form-control" %>
