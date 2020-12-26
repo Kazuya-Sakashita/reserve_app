@@ -18,15 +18,15 @@
   <br><br><br><br><br><br><br><br><br>
 
 
-  <%= link_to '予約',step1_reserves_path(current_user) %><br>
-  <%= link_to '履歴',reserves_show_path(@user) %>
+  <%= link_to '予約',step1_reserves_path(current_user), class: "btn btn-secondary btn-lg btn-block" %><br>
+  <%= link_to '履歴',reserves_show_path(@user), class: "btn btn-secondary btn-lg btn-block" %>
 
   <br><br><br><br><br><br><br><br><br>
-        <% if current_user.admin === 1 %>
- <h1>管理者メニュー</h1>
-          <%= link_to '予約状況（管理者）',"#" %><br>
-          <%= link_to 'USER管理画面（管理者）',admin_users_path %><br>
-          <%= link_to 'PLANS管理画面（管理者）',admin_plans_path %>
-        <% end %> 
+  <% if current_user.admin === 1 %>
+  <h1>管理者メニュー</h1>
+  <%= link_to '予約状況（管理者）',"#" %><br>
+  <%= link_to 'USER管理画面（管理者）',admin_users_path %><br>
+  <%= link_to 'PLANS管理画面（管理者）',admin_plans_path %>
+  <% end %>
 
 </div>

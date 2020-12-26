@@ -15,7 +15,18 @@ class ReservesController < ApplicationController
   end
   def step3
     session[:plan_id] = reservation_params[:plan_id]
+# binding.pry
+
     free_block = Block.pluck(:id)-Reservation.where(reservation_date:session[:reservation_date]).pluck(:reservation_block).map(&:to_i)
+    # block_number = reserevation.plan.time_block
+
+    2.times do |f| #一旦2回で試す
+    new_free_block = free_block.map{|n|n-1}
+    free_block = free_block & new_free_block
+    end
+binding.pry
+
+
     @reservation = Reservation.new
     @time_blocks = Block.where(id: [free_block])
   end
