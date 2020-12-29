@@ -18,7 +18,6 @@ class ReservesController < ApplicationController
 binding.pry
 
     free_block = Block.pluck(:id)-Reservation.where(reservation_date:session[:reservation_date]).pluck(:reservation_block).flatten
-    # block_number = reserevation.plan.time_block
 
     2.times do |f| #一旦2回で試す
     new_free_block = free_block.map{|n|n-1}
@@ -31,36 +30,18 @@ binding.pry
   end
 
   def create
-binding.pry
-
-
-
     @reservation = Reservation.new(
       staff_id: session[:staff_id],
       reservation_date: session[:reservation_date],
       plan_id: session[:plan_id],
-      # reservation_block:reservation_params[:reservation_block]
     )
-    # @block1 = reservation_params[:reservation_block]
-    # @block2 = reservation_params[:reservation_block]
-    # @block2 = @block2.to_i + 1
-    # @block3 = @block2.to_i + 1
-    # @block1 = @block1.to_s.split()
-    # @block2 = @block2.to_s.split()
-    # @block3 = @block3.to_s.split()
-    # @block = @block1 + @block2 + @block3
-
     @block = (reservation_params[:reservation_block]).split()
     @temporary_block = reservation_params[:reservation_block]
       2.times do |r| #一旦2回で試す
         @temporary_block = ((@temporary_block.to_i + 1).to_s)
         @block.push(@temporary_block)
       end
-
-# binding.pry
-
     @reservation.reservation_block = @block.map(&:to_i)
-# binding.pry
     @reservation.user_id = current_user.id
     @reservation.status = 0
       if @reservation.save
