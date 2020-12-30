@@ -15,8 +15,12 @@ class ReservesController < ApplicationController
   end
   def step3
     session[:plan_id] = reservation_params[:plan_id]
+    block_id = Plan.where(id:reservation_params[:plan_id]).pluck(:time_block)
     free_block = Block.pluck(:id)-Reservation.where(reservation_date:session[:reservation_date]).pluck(:reservation_block).flatten
-    2.times do |f| #一旦2回で試す
+    
+    block_num = Plan.where(id:reservation_params[:plan_id]).pluck(:time_block)
+    block_num = block_num.first.to_i-1
+    block_num.times do |f| 
       new_free_block = free_block.map{|n|n-1}
       free_block = free_block & new_free_block
     end
@@ -30,13 +34,15 @@ class ReservesController < ApplicationController
       reservation_date: session[:reservation_date],
       plan_id: session[:plan_id],
     )
-    @block = (reservation_params[:reservation_block]).split()
-    @temporary_block = reservation_params[:reservation_block]
-      2.times do |r| #一旦2回で試す
-        @temporary_block = ((@temporary_block.to_i + 1).to_s)
-        @block.push(@temporary_block)
+    block = (reservation_params[:reservation_block]).split()#ブロック番号（予約開始時間）
+    temporary_block = reservation_params[:reservation_block]#計算するために一時保管する
+      block_num = Plan.where(id:session[:plan_id]).pluck(:time_block)#プランIDからブロックすうを検索
+      block_num = block_num.first.to_i-1
+        block_num.times do |r| #必要ブロックを配列に追加
+        temporary_block = ((temporary_block.to_i + 1).to_s)
+        block.push(temporary_block)
       end
-    @reservation.reservation_block = @block.map(&:to_i)
+    @reservation.reservation_block = block.map(&:to_i)
     @reservation.user_id = current_user.id
     @reservation.status = 0
       if @reservation.save
