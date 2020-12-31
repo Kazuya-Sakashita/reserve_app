@@ -16,7 +16,7 @@ class ReservesController < ApplicationController
   def step3
     session[:plan_id] = reservation_params[:plan_id]
     block_id = Plan.where(id:reservation_params[:plan_id]).pluck(:time_block)
-    free_block = Block.pluck(:id)-Reservation.where(reservation_date:session[:reservation_date]).pluck(:reservation_block).flatten
+    free_block = Block.pluck(:id)-Reservation.where(staff_id:session[:staff_id]).where(reservation_date:session[:reservation_date]).pluck(:reservation_block).flatten
     
     block_num = Plan.where(id:reservation_params[:plan_id]).pluck(:time_block)
     block_num = block_num.first.to_i-1
@@ -56,8 +56,7 @@ class ReservesController < ApplicationController
   end
 
   def show
-    @user_id = current_user.id
-    @reservations = Reservation.where("user_id = #{@user_id}" )
+    @reservations = Reservation.where("user_id = #{current_user.id}" )
   end
 
   def edit
