@@ -24,7 +24,7 @@
   <br><br><br><br><br><br><br><br><br>
   <% if current_user.admin === 1 %>
   <h1>管理者メニュー</h1>
-  <%= link_to '予約状況（管理者）',"#" %><br>
+  <%= link_to '予約状況（管理者）',admin_boards_path %><br>
   <%= link_to 'USER管理画面（管理者）',admin_users_path %><br>
   <%= link_to 'PLANS管理画面（管理者）',admin_plans_path %>
   <% end %>

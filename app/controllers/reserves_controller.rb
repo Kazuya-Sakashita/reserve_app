@@ -18,8 +18,8 @@ class ReservesController < ApplicationController
     block_id = Plan.where(id:reservation_params[:plan_id]).pluck(:time_block)
     free_block = Block.pluck(:id)-Reservation.where(staff_id:session[:staff_id]).where(reservation_date:session[:reservation_date]).pluck(:reservation_block).flatten
     
-    block_num = Plan.where(id:reservation_params[:plan_id]).pluck(:time_block)
-    block_num = block_num.first.to_i-1
+    block_nums = Plan.where(id:reservation_params[:plan_id]).pluck(:time_block)
+    block_num = block_nums.first.to_i-1
     block_num.times do |f| 
       new_free_block = free_block.map{|n|n-1}
       free_block = free_block & new_free_block
@@ -36,11 +36,11 @@ class ReservesController < ApplicationController
     )
     block = (reservation_params[:reservation_block]).split()#ブロック番号（予約開始時間）
     temporary_block = reservation_params[:reservation_block]#計算するために一時保管する
-      block_num = Plan.where(id:session[:plan_id]).pluck(:time_block)#プランIDからブロックすうを検索
-      block_num = block_num.first.to_i-1
+      block_nums = Plan.where(id:session[:plan_id]).pluck(:time_block)#プランIDからブロックすうを検索
+      block_num = block_nums.first.to_i-1
         block_num.times do |r| #必要ブロックを配列に追加
-        temporary_block = ((temporary_block.to_i + 1).to_s)
-        block.push(temporary_block)
+        temporary_block = ((temporary_block.to_i + 1).to_s)#プロック数に＋1
+        block.push(temporary_block)#プロックに連続の数字を追加
       end
     @reservation.reservation_block = block.map(&:to_i)
     @reservation.user_id = current_user.id
