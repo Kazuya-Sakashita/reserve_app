@@ -9,4 +9,5 @@ class Reservation < ApplicationRecord
   belongs_to :plan
   belongs_to :staff, optional: true
   belongs_to :block, optional: true
+  serialize :reservation_block
 end
