@@ -6,7 +6,7 @@
 <div>
   <div class="col-lg-6 offset-md-2">
     <h6>会員登録済みの方は下記ボタンよりログインをお願いいたします。</h6>
-    <%= button_to 'login', {:controller => "sessions", :action => "new"}, {:method => :get, class: "btn btn-info btn-lg"} %>
+    <%= button_to 'login', {:controller => "sessions", :action => "new"}, {:method => :get, class: "btn btn btn-secondary"} %>
     <br><br><br>
 
     <h1>ユーザー登録</h1>
@@ -56,7 +56,7 @@
       <%=f.text_area :etc, :placeholder => "（例）ヘアスタイルなどについてのお悩みなど、なんでもお気軽に入力ください",  class:"form-control" %>
     </div>
 
-    <%= f.submit "会員登録" , class:"btn btn-primary" %>
+    <%= f.submit "会員登録" , class:"btn btn-secondary" %>
 
     <% end %>
 

@@ -4,14 +4,14 @@
 
 <% provide(:title, "Log in") %>
 <div class="row">
-  <div class ="col-lg-6 offset-md-2">
+  <div class="col-lg-6 offset-md-2">
     <h1>Log in</h1>
-      <%= form_for(:session, url: login_path) do |f| %>
-        <%= f.label :email, "メール or 電話番号" %><%# メールと電話番号両方にしたため下のように書いた　%>
-        <input type="text" name="email" class="form-control">
-        <%= f.label :password %>
-        <%= f.password_field :password, class: 'form-control' %>
-        <%= f.submit "Log in", class: "btn btn-primary" %>
+    <%= form_for(:session, url: login_path) do |f| %>
+    <%= f.label :email, "メール or 電話番号" %><%# メールと電話番号両方にしたため下のように書いた　%>
+    <input type="text" name="email" class="form-control">
+    <%= f.label :password %>
+    <%= f.password_field :password, class: 'form-control' %>
+    <%= f.submit "Log in", class: "btn btn-secondary" %>
     <% end %>
     <p>New user? <%= link_to "Sign up now!", new_users_path %></p>
   </div>

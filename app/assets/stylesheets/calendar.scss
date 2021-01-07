@@ -5,7 +5,7 @@ body {
 
 table {
   border-collapse: collapse;
-  border: 2px solid #eee;
+  border: 2px solid #212121;
 }
 
 thead,
@@ -20,7 +20,7 @@ td {
 }
 
 //毎週月曜日（2番目に配置されている日）を休み（赤くする）
-tbody td:nth-child(2) {
+.calendar-month tbody td:nth-child(2) {
   color: red;
 }
 

@@ -17,40 +17,263 @@
 // Custom bootstrap variables must be set or imported *before* bootstrap.
 @import "bootstrap";
 
-
-
-
-
-/* -------------------- header -------------------- */
-.header-container {
+html {
     width: 100%;
-    height: 20px;
+    background-color: #e8e6e6;
+    color: #000000;
+}
+
+// header {
+//     background: url("boy01.jpg")no-repeat left top;
+//     height: 50px;
+//     background-size: cover;
+//     background: lightgray;
+// }
+
+
+.clearfix::after {
+    content: "";
+    display: block;
+    clear: both;
+}
+
+.table-bordered th,
+.table-bordered td {
+    border: 1px solid #b3b6b9;
+}
+
+
+#global-navi {
+    z-index: 9999;
+    position: fixed;
+    display: flex;
+    justify-self: end;
+    text-align: center;
+    background: rgba($color: #000, $alpha: 0.7);
     position: fixed;
     top: 0;
-    margin: 0;
-    padding: 4px;
-    background-color: rgba(238, 237, 237, 0.646);
-    z-index: 9999;
-    height: 50px;
-    color: white;
+    right: 0px;
+    width: 100%;
 }
 
-.header-container ul li {
-    display: inline-block;
-    color: white;
+#global-navi ul {
+    overflow: hidden;
+    margin: 0 auto;
+    padding: 0 3%;
+    width: 94%;
+    max-width: 960px;
 }
 
-/* -------------------- main-container -------------------- */
+#global-navi ul li {
+    position: relative;
+    float: left;
+    width: 10%;
+    list-style: none;
+}
+
+#global-navi ul li a {
+    display: block;
+    padding: 17px 5%;
+    width: 90%;
+    color: #fff;
+    text-align: center;
+    text-decoration: none;
+}
+
+#global-navi ul li a:hover {
+    color: rgba($color: #000, $alpha: 0.7);
+    background-color: #c7c7c7;
+    border-color: #868686;
+}
+
 .main-container {
-    background-repeat: no-repeat;
-    padding: px 500px 0px 5px 20px;
-    background-image: url("boy01.jpg");
-    background-size: contain;
-    background-position: 5px 80px;
+    width: 100%;
+    padding-right: 0px;
+    padding-left: 0px;
+    margin-right: auto;
+    margin-left: auto;
 }
 
 
-/* -------------------- info_image -------------------- */
-// .info_image {
-//     // max-width: 50%;
-//     // min-height: 50%;}
+.part-img {
+    // background-image: url("boy01.jpg");
+    /* 画像のURLを指定       */
+    background-repeat: no-repeat;
+    /* 画像の繰り返しを指定  */
+    background-position: 0 0;
+    /* 画像の表示位置を指定  */
+    background-size: contain;
+    /* 画像のサイズを指定    */
+    width: 100%;
+    /* 横幅のサイズを指定    */
+    height: 700px;
+    /* 縦幅のサイズを指定    */
+    background-position: left top;
+    // background: radial-gradient(ellipse at center, rgba(255, 255, 255, 0) 40%, rgba(255, 255, 255, 0.5) 60%, rgba(255, 255, 255, 1) 100%), url("boy01.jpg");
+    background-image: radial-gradient(ellipse at center, rgba(255, 255, 255, 0) 40%, rgba(255, 255, 255, 0.5) 60%, rgba(255, 255, 255, 1) 100%), url("boy01.jpg");
+}
+
+.body-page {
+    background-color: #e8e6e6;
+}
+
+body {
+    font-family: Verdana, "ＭＳ Ｐゴシック", sans-serif;
+    font-size: 80%;
+}
+
+.content {
+    line-height: 1.6;
+    margin: 0 auto;
+    padding-top: 100px;
+    width: 800px;
+}
+
+.content p {
+    margin-bottom: 40px;
+}
+
+a:visited {
+    color: #c7c7c7;
+}
+
+.btn-secondary {
+    color: #c7c7c7;
+    background-color: rgba($color: #000, $alpha: 0.7);
+    border-color: #868686;
+}
+
+.btn-secondary:hover {
+    color: rgba($color: #000, $alpha: 0.7);
+    background-color: #c7c7c7;
+    border-color: #868686;
+}
+
+
+a:visited:hover {
+    color: rgba($color: rgb(250, 250, 250), $alpha: 0.8);
+}
+
+.infomation-covid19 {
+    text-align: center;
+    margin: 0 auto;
+    background-color: #fff;
+}
+
+.infomation-covid19 h6 {
+    font-weight: bold;
+}
+
+.admin-menu {
+    background-color: #fff;
+}
+
+.table-bordered {
+    background-color: #fff;
+}
+
+.holidayText {
+    color: #ff0000;
+}
+
+.calendarBox {
+    float: left;
+    /* インラインブロック要素にする */
+    background-color: rgb(255, 255, 255);
+    /* 背景色指定 */
+    padding: 50px;
+    /* 余白指定 */
+}
+
+.calendar-month {
+    float: left;
+    /* インラインブロック要素にする */
+    background-color: rgb(255, 255, 255);
+    /* 背景色指定 */
+    padding: 50px;
+    /* 余白指定 */
+}
+
+.resevationBtn {
+    clear: both;
+}
+
+.form-group {
+    font-size: 20px;
+}
+
+.bg-color {
+    background-color: #fff;
+}
+
+.image_container {
+    display: flex;
+    flex-direction: row;
+    justify-content: top;
+    align-items: flex-start;
+    width: 800px;
+}
+
+.infomation-covid19-text p {
+    margin: 0.5em 0px;
+}
+
+.mce-content-body {
+
+    text-align: justify;
+    text-justify: inter-ideograph;
+    -ms-text-justify: inter-ideograph;
+}
+
+.about_me p {
+    margin: 1px 0px;
+}
+
+.table-bordered th {
+    text-align: center;
+    color: #000;
+}
+
+.table-bordered td {
+    text-align: center;
+    color: #000;
+}
+
+.clear_text {
+    color: initial;
+    font-size: initial;
+    text-shadow: initial;
+}
+
+.menu-title {
+    text-align: center;
+}
+
+.menu-table {
+    background-color: rgb(255, 255, 255);
+}
+
+.information-menu {
+    background-color: rgb(255, 255, 255);
+}
+
+.image_container img {
+    padding: 10px;
+}
+
+.our-news {
+    background-color: rgb(255, 255, 255);
+    height: 200px;
+}
+
+#global-footer-navi {
+    width: 100%;
+    right: 0px;
+    text-align: center;
+    background: rgba($color: #000, $alpha: 0.7);
+    height: 100px;
+}
+
+#global-footer-navi p {
+    color: #c7c7c7;
+}
