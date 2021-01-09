@@ -91,7 +91,7 @@
       <br>
       <div class="resevationBtn">
         <h3>下記のボタンからご予約出来ます。</h3>
-        <%= button_to '予約' , {:controller => "users", :action => "new"}, {:method => :get, class: "btn btn-block btn-secondary"} %>
+        <%= button_to '予約' , {:controller => "sessions", :action => "new"}, {:method => :get, class: "btn btn-block btn-secondary"} %>
       </div>
       <br>
       <div class="menu-table" id="menu-table">
@@ -104,12 +104,15 @@
 
 
     <div class="our-news">
-      <h6>お知らせ</h6>
-      <div>
-        <p id="our-news">お店からのお知らせを掲載</p>
+      <h2 class="news-title">お知らせ</h2>
+      <div class="news-table">
+        <div>
+          <p id="our-news">お店からのお知らせを掲載</p>
+        </div>
       </div>
     </div>
   </div>
-
-  <%= render 'footer' %>
+  <div class="footer-container">
+    <%= render 'footer' %>
+  </div>
 </div>

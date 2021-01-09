@@ -15,20 +15,9 @@
     <p class="form-control">誕生日: <%= current_user.birthday %></p>
 
   </div>
-  <br>
+  <p>こちらから予約が可能です--->
+    <%= link_to '予約',step1_reserves_path(current_user) %><br>
+    こちらから来店履歴が確認出来ます--->
+    <%= link_to '履歴',reserves_show_path(current_user) %></p>
 
-
-  <%= link_to '予約',step1_reserves_path(current_user), class: "btn btn-secondary btn-lg btn-block w-25" %><br>
-  <%= link_to '履歴',reserves_show_path(@user), class: "btn btn-secondary btn-lg btn-block w-25" %>
-
-  <br><br><br><br>
-  <% if current_user.admin === 1 %>
-  <div class="admin-menu">
-    <h1>管理者メニュー</h1>
-    <%= link_to '予約状況（管理者）',admin_boards_path %><br>
-    <%= link_to 'USER管理画面（管理者）',admin_users_path %><br>
-    <%= link_to 'PLANS管理画面（管理者）',admin_plans_path %>
-    <% end %>
-    <br><br>
-  </div>
 </div>

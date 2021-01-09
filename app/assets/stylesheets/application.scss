@@ -35,6 +35,7 @@ html {
 .table-bordered th,
 .table-bordered td {
     border: 1px solid #b3b6b9;
+    padding: 10px;
 }
 
 
@@ -288,9 +289,24 @@ a:visited:hover {
     padding: 10px;
 }
 
-.our-news {
+.news-table {
     background-color: rgb(255, 255, 255);
     height: 200px;
+    padding: 10px;
+}
+
+.news-title {
+    text-align: center;
+}
+
+
+.our-news h6 {
+    padding-top: 10px;
+    padding-left: 10px;
+}
+
+.our-news p {
+    padding-left: 30px;
 }
 
 #global-footer-navi {
@@ -309,6 +325,10 @@ a:visited:hover {
     margin: 30px;
 }
 
+.menu-table h2 {
+    background-color: #e8e6e6;
+}
+
 .resevationBtn {
     margin: 200px;
     position: relative;
@@ -319,6 +339,21 @@ a:visited:hover {
     position: center;
 }
 
+.resevationBtn h3 {
+    text-align: center;
+}
+
+
 .our-news {
     margin: 30px;
+}
+
+.order-table {
+    padding: 10px;
+}
+
+#global-footer-navi p {
+    text-align: right;
+    padding-top: 10px;
+    padding-right: 10px;
 }
