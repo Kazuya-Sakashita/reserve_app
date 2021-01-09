@@ -18,6 +18,7 @@
 @import "bootstrap";
 @import url('https://fonts.googleapis.com/css2?family=Parisienne&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Kaushan+Script&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Sawarabi+Mincho&display=swap');
 
 html {
     width: 100%;
@@ -238,10 +239,14 @@ a:visited:hover {
     margin: 30px;
 }
 
-#about_me {}
+.about_me_table p {
+    font-family: 'Sawarabi Mincho', sans-serif;
+}
 
 .about_me p {
     margin: 1px 0px;
+    font-family: 'Sawarabi Mincho', sans-serif;
+
 }
 
 .abaout_me_map {
