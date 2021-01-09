@@ -1,10 +1,7 @@
 <br><br><br><br><br>
 
-
-<h1>ご来店履歴</h1>
-
-<div class="col-md-6 offset-md-1">
-
+<div class="col-md-8 offset-md-1">
+  <h1>ご来店履歴</h1>
   <p class="form-control">名前: <%= current_user.name %></p>
   <p class="form-control">会員番号: <%= current_user.id %></p> <br>
 
@@ -16,7 +13,6 @@
       <th>コース</th>
       <th>コース名</th>
     </tr>
-
 
     <% @reservations.each do |reserve| %>
     <tr>

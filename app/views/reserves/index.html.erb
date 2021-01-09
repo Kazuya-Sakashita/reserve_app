@@ -1,148 +1,120 @@
-<div class="col-lg-10 offset-md-1">
-  <div class="container-fluid">
-    <div class="main-container">
-      <br>
-      <br>
-      <br>
-      <br>
-      <br>
-      <h6>このページはサンプルとして作成されたものです</h6>
-
-
-      <br>
-      <br>
-      <br>
-      <br>
-      <br>
-      <br>
-      <br>
-      <br>
-      <br>
-      <br>
-      <br>
-      <br>
-      <br>
-      <br>
-      <br>
-      <br>
-      <br>
-      <br>
-      <br>
-      <br>
-      <br>
-      <br>
-
+<div>
+  <div class="main-container">
+    <div class="main-img">
+      <div class="part-img">
+      </div>
     </div>
-
-
+    <div class="infomation-covid19">
+      <br>
+      <h6>新型コロナウイルス感染拡大防止のための当社での取り組み</h6>
+      <div class="infomation-covid19-text">
+        <p>★当店では、お客様に少しでも安心してご来店頂けるよう対策の徹底に努めております</p>
+        <p>★ 消毒、検温、空間除菌、換気など様々な感染予防対策を徹底して行なっております。</p>
+        <p>★またお客様にも、手指の消毒・非接触での検温をお願いしております。</P>
+        <p>★お客様ならびにスタッフの安心と安全のためご理解・ご協力をお願い致します。</p>
+        <br>
+      </div>
+    </div>
 
     <%#お店の紹介　コメント%>
-    <div>
-      <h3 id="about_me">Ohana</h3>
-      <p>オハナ（ハワイ語:Ohana)は、ハワイ語で広義の『家族』に相当する概念</p>
-      <p>オハナは、『愛』ともいうべき『絆』で結ばれた人のことをいう言葉・・・</p>
-    </div>
+    <div class="col-lg-10 offset-md-1">
+      <div class="about_me_table">
+        <h3 class="about_me" id="about_me">-Kazuya's ROOM-</h3>
+        <p>ここにはお店の紹介などを記載します。</p>
+        <p>お客様にどのような体験をしたもれるのかを素直に表現します。</p>
+        <p>テストコメント</p>
+        <p>テストコメント</p>
+        <p>テストコメント</p>
+      </div>
 
-
-
-
-
-    <p><span>ここにお店情報を表示する。画像を使って紹介する</span></p><br><br><br><br><br>
-    <%#お店の紹介画像%>
-
-    <div class="image_container">
-      <%= image_tag "ohana_pic01.jpg", alt: "お店画像", class: "image", width: "200px"  %>
-      <%= image_tag "ohana_pic02.jpg", alt: "お店画像", class: "image", width: "220px"  %>
-      <%= image_tag "ohana_pic02-2.jpg", alt: "お店画像", class: "image", width: "200px" %>
-      <%= image_tag "ohana_pic03.jpg", alt: "お店画像", class: "image", height: "150px" %>
-    </div>
-
-    <br><br><br><br><br>
-
-
-    <%#地図表示%>
-    <iframe src=https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3283.3180907791007!2d135.53251365131595!3d34.621401094871835!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x6000de8f873e4b1d%3A0xb9b56e4cb201c27b!2z44CSNTQ2LTAwNDIg5aSn6Ziq5bqc5aSn6Ziq5biC5p2x5L2P5ZCJ5Yy66KW_5LuK5bed77yU5LiB55uu77yS77yT4oiS77yR77yS!5e0!3m2!1sja!2sjp!4v1600989074507!5m2!1sja!2sjp" width="600" height="450" frameborder="0" style="border:0;" allowfullscreen="" aria-hidden="false" tabindex="0"></iframe>"
-    <br><br>
-    住所 〒546-0042 大阪府大阪市東住吉区西今川4-23-12 <br>
-    アクセス 大阪市営谷町線 駒川中野駅 徒歩2分 <br>
-
-    <br><br><br><br>
-
-    <%#カレンダー%>
-    <div class="calendarBox">
-      <div class="inner cf">
-        <div class="calendarTextBox">
-          <h3 class="sub_tit">営業時間</h3>
-
-          <p class="colorsText">
-            <span class="holidayText">
-              <span>&#9632;</span>
-              定休日　毎週月曜日<br>
-            </span>
-            <span class="lastText">
-              <span>&#9632;</span>
-              最終受付22:00<br>
-            </span>
-            <span class="todayText">
-              <span>&#9632;</span>
-              平日 12：00〜23：00 <br>
-              土日祝 8：30〜23：00 <br>
-            </span>
-          </p>
-          <p class="lastTime">
-            <em>※ 土日祝は8時30分から営業しております</em>
-          </p>
-          <dl class="holiday_dl">
-            <dt>［ 定休日 ］</dt>
-            <dd>毎週月曜日</dd>
-          </dl>
-        </div>
-
-        <%#ここまでカレンダー%>
-
-
-        <%#カレンダーコンテナー%>
-        <%= render 'calendar' %>
-        <%#ここまでカレンダーコンテナー%>
-
-        <br><br><br><br><br>
-
-        <br>
-        <%= button_to '予約' , {:controller => "users", :action => "new"}, {:method => :get, class: "btn btn-lg btn-primary"} %>
-        <br>
-        <br>
-        <br>
-        <br>
-        <br>
-        <br>
-        <h6>お知らせ</h6>
-        <div>
-          <p id="news">お店からのお知らせを掲載</p>
-          <h3>このあたりにお知らせ掲示板を表示する（画像つけた掲示板）</h3>
-        </div>
-
-        <br>
-        <br>
-        <br>
-        <br>
-        <br>
-        <br>
-        <br>
-        <br>
-        <br>
-        <br>
-        <br>
-        <br>
-        <br>
-
-
-
-
-
-
-
-
-        <div id="footer_main">
-          <p>&copy; 20xx ○○ xxxxxxxxxxxx.</p>
+      <div class="about_me-image">
+        <p><span>画像をのせて店内がどのような雰囲気なのかを感じていただく</span>
+          <%#お店の紹介画像%>
+        <div class="image_container">
+          <%= image_tag "s001.jpg", alt: "お店画像", class: "image", width: "200px"  %>
+          <%= image_tag "s001.jpg", alt: "お店画像", class: "image", width: "200px"  %>
+          <%= image_tag "s001.jpg", alt: "お店画像", class: "image", width: "200px" %>
+          <%= image_tag "s001.jpg", alt: "お店画像", class: "image", width: "200px" %>
         </div>
       </div>
+
+
+
+      <div class="abaout_me_map">
+        <h3>ACCESS</h3>
+        <%#地図表示%>
+        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3282.2925270526634!2d135.51167495153246!3d34.64731459348585!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x6000ddf0fdd44579%3A0x90b6c0d913ac9a7e!2z5aSp546L5a-66aeF!5e0!3m2!1sja!2sjp!4v1609709365170!5m2!1sja!2sjp" width="400" height="300" frameborder="0" style="border:0;" allowfullscreen="" aria-hidden="false" tabindex="0"></iframe>
+        <br><br>
+        〒543-0055 大阪府大阪市天王寺区悲田院町１０−４５ <br>
+        サンプル住所として、天王寺駅のMAP及び住所を表示しています。
+      </div>
+
+      <div class="business_time">
+        <%#カレンダー%>
+        <div class="calendarBox">
+          <div class="inner cf">
+            <div class="calendarTextBox">
+              <h3 class="sub_tit">営業時間</h3>
+
+              <p class="colorsText">
+                <span class="holidayText">
+                  <span>&#9632;</span>
+                  定休日　毎週月曜日<br>
+                </span>
+                <span class="lastText">
+                  <span>&#9632;</span>
+                  最終受付20:00<br>
+                </span>
+                <span class="todayText">
+                  <span>&#9632;</span>
+                  平日 10：00〜21：00 <br>
+                  土日祝 10：00〜21：00 <br>
+                </span>
+              </p>
+              <p class="lastTime">
+                <em>※ 最終受付は20時となります。</em>
+              </p>
+              <dl class="holiday_dl">
+                <dt>［ 定休日 ］</dt>
+                <dd>毎週月曜日</dd><br><br><br>
+              </dl>
+            </div>
+          </div>
+        </div>
+        <%#ここまでカレンダー%>
+
+        <div class="calendar-month">
+          <%#カレンダーコンテナー%>
+          <%= render 'calendar' %>
+          <%#ここまでカレンダーコンテナー%>
+        </div>
+      </div>
+
+      <br>
+      <div class="resevationBtn">
+        <h3>下記のボタンからご予約出来ます。</h3>
+        <%= button_to '予約' , {:controller => "sessions", :action => "new"}, {:method => :get, class: "btn btn-block btn-secondary"} %>
+      </div>
+      <br>
+      <div class="menu-table" id="menu-table">
+        <h2 class="menu-title">メニュー</h2>
+        <div class="order-table">
+          <%= render 'order' %>
+        </div>
+      </div>
+    </div>
+
+
+    <div class="our-news">
+      <h2 class="news-title">お知らせ</h2>
+      <div class="news-table">
+        <div>
+          <p id="our-news">お店からのお知らせを掲載</p>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="footer-container">
+    <%= render 'footer' %>
+  </div>
+</div>
