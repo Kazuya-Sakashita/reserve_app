@@ -1,7 +1,8 @@
 <div>
   <div class="main-container">
-    <div class="part-img">
-
+    <div class="main-img">
+      <div class="part-img">
+      </div>
     </div>
     <div class="infomation-covid19">
       <br>
@@ -14,91 +15,83 @@
         <br>
       </div>
     </div>
-    <br>
-    <br>
-    <br>
-    <br>
-    <br>
-
-    <br>
-
-
-
 
     <%#お店の紹介　コメント%>
     <div class="col-lg-10 offset-md-1">
-      <h3 class="about_me" id="about_me">Kazuya's ROOM</h3>
+      <h3 class="about_me" id="about_me">-Kazuya's ROOM-</h3>
       <p>ここにはお店の紹介などを記載します。</p>
       <p>お客様にどのような体験をしたもれるのかを素直に表現します。</p>
       <p>テストコメント</p>
       <p>テストコメント</p>
       <p>テストコメント</p>
 
-
-      <p><span>画像をのせて店内がどのような雰囲気なのかを感じていただく</span>
-        <%#お店の紹介画像%>
-      <div class="image_container">
-        <%= image_tag "s001.jpg", alt: "お店画像", class: "image", width: "200px"  %>
-        <%= image_tag "s001.jpg", alt: "お店画像", class: "image", width: "200px"  %>
-        <%= image_tag "s001.jpg", alt: "お店画像", class: "image", width: "200px" %>
-        <%= image_tag "s001.jpg", alt: "お店画像", class: "image", width: "200px" %>
-      </div>
-
-
-      <br><br><br><br><br>
-
-
-      <%#地図表示%>
-      <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3282.2925270526634!2d135.51167495153246!3d34.64731459348585!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x6000ddf0fdd44579%3A0x90b6c0d913ac9a7e!2z5aSp546L5a-66aeF!5e0!3m2!1sja!2sjp!4v1609709365170!5m2!1sja!2sjp" width="400" height="300" frameborder="0" style="border:0;" allowfullscreen="" aria-hidden="false" tabindex="0"></iframe>
-      <br><br>
-      〒543-0055 大阪府大阪市天王寺区悲田院町１０−４５ <br>
-      サンプル住所として、天王寺駅のMAP及び住所を表示しています。 <br>
-
-      <br><br><br><br>
-
-      <%#カレンダー%>
-      <div class="calendarBox">
-        <div class="inner cf">
-          <div class="calendarTextBox">
-            <h3 class="sub_tit">営業時間</h3>
-
-            <p class="colorsText">
-              <span class="holidayText">
-                <span>&#9632;</span>
-                定休日　毎週月曜日<br>
-              </span>
-              <span class="lastText">
-                <span>&#9632;</span>
-                最終受付22:00<br>
-              </span>
-              <span class="todayText">
-                <span>&#9632;</span>
-                平日 10：00〜21：00 <br>
-                土日祝 10：00〜21：00 <br>
-              </span>
-            </p>
-            <p class="lastTime">
-              <em>※ 最終受付は20時となります。</em>
-            </p>
-            <dl class="holiday_dl">
-              <dt>［ 定休日 ］</dt>
-              <dd>毎週月曜日</dd><br><br><br>
-            </dl>
-          </div>
+      <div class="about_me-image">
+        <p><span>画像をのせて店内がどのような雰囲気なのかを感じていただく</span>
+          <%#お店の紹介画像%>
+        <div class="image_container">
+          <%= image_tag "s001.jpg", alt: "お店画像", class: "image", width: "200px"  %>
+          <%= image_tag "s001.jpg", alt: "お店画像", class: "image", width: "200px"  %>
+          <%= image_tag "s001.jpg", alt: "お店画像", class: "image", width: "200px" %>
+          <%= image_tag "s001.jpg", alt: "お店画像", class: "image", width: "200px" %>
         </div>
       </div>
-      <%#ここまでカレンダー%>
 
-      <div class="calendar-month">
-        <%#カレンダーコンテナー%>
-        <%= render 'calendar' %>
-        <%#ここまでカレンダーコンテナー%>
+
+
+      <div class="abaout_me_map">
+        <h3>ACCESS</h3>
+        <%#地図表示%>
+        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3282.2925270526634!2d135.51167495153246!3d34.64731459348585!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x6000ddf0fdd44579%3A0x90b6c0d913ac9a7e!2z5aSp546L5a-66aeF!5e0!3m2!1sja!2sjp!4v1609709365170!5m2!1sja!2sjp" width="400" height="300" frameborder="0" style="border:0;" allowfullscreen="" aria-hidden="false" tabindex="0"></iframe>
+        <br><br>
+        〒543-0055 大阪府大阪市天王寺区悲田院町１０−４５ <br>
+        サンプル住所として、天王寺駅のMAP及び住所を表示しています。
+      </div>
+
+      <div class="business_time">
+        <%#カレンダー%>
+        <div class="calendarBox">
+          <div class="inner cf">
+            <div class="calendarTextBox">
+              <h3 class="sub_tit">営業時間</h3>
+
+              <p class="colorsText">
+                <span class="holidayText">
+                  <span>&#9632;</span>
+                  定休日　毎週月曜日<br>
+                </span>
+                <span class="lastText">
+                  <span>&#9632;</span>
+                  最終受付20:00<br>
+                </span>
+                <span class="todayText">
+                  <span>&#9632;</span>
+                  平日 10：00〜21：00 <br>
+                  土日祝 10：00〜21：00 <br>
+                </span>
+              </p>
+              <p class="lastTime">
+                <em>※ 最終受付は20時となります。</em>
+              </p>
+              <dl class="holiday_dl">
+                <dt>［ 定休日 ］</dt>
+                <dd>毎週月曜日</dd><br><br><br>
+              </dl>
+            </div>
+          </div>
+        </div>
+        <%#ここまでカレンダー%>
+
+        <div class="calendar-month">
+          <%#カレンダーコンテナー%>
+          <%= render 'calendar' %>
+          <%#ここまでカレンダーコンテナー%>
+        </div>
       </div>
 
       <br>
       <div class="resevationBtn">
         <h3>下記のボタンからご予約出来ます。</h3>
-        <%= button_to '予約' , {:controller => "users", :action => "new"}, {:method => :get, class: "btn btn-lg btn-secondary"} %>
+        <%= button_to '予約' , {:controller => "users", :action => "new"}, {:method => :get, class: "btn btn-block btn-secondary"} %>
       </div>
       <br>
       <div class="menu-table" id="menu-table">
@@ -108,32 +101,14 @@
         </div>
       </div>
     </div>
-    <br>
-    <br>
-    <br>
-    <br>
+
+
     <div class="our-news">
       <h6>お知らせ</h6>
       <div>
         <p id="our-news">お店からのお知らせを掲載</p>
       </div>
     </div>
-    <br>
-    <br>
-    <br>
-    <br>
-    <br>
-    <br>
-    <br>
-    <br>
-    <br>
-    <br>
-    <br>
-    <br>
-    <br>
-
-
-
   </div>
 
   <%= render 'footer' %>
