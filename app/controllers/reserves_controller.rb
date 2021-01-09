@@ -3,7 +3,6 @@ class ReservesController < ApplicationController
   def new
    @reservation = Reservation.new
   end
-
   def step1
     @reservation = Reservation.new
     @user = User.find_by(id: params[:id])
@@ -27,7 +26,6 @@ class ReservesController < ApplicationController
     @reservation = Reservation.new
     @time_blocks = Block.where(id: [free_block])
   end
-
   def create
     @reservation = Reservation.new(
       staff_id: session[:staff_id],
