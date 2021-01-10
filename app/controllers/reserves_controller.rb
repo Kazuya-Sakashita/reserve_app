@@ -53,6 +53,8 @@ class ReservesController < ApplicationController
 
   def index
         @plans = Plan.all
+        @users = User.all
+        @reservations = Reservation.all
   end
 
   def show
