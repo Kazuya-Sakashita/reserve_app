@@ -33,12 +33,6 @@ html {
     clear: both;
 }
 
-.table-bordered th,
-.table-bordered td {
-    border: 1px solid #b3b6b9;
-    padding: 10px;
-}
-
 
 #global-navi {
     z-index: 9999;
@@ -169,9 +163,6 @@ a:visited:hover {
     background-color: #fff;
 }
 
-.table-bordered {
-    background-color: #fff;
-}
 
 .holidayText {
     color: #ff0000;
@@ -257,8 +248,22 @@ a:visited:hover {
     margin: 30px;
 }
 
+.order-table {
+    padding: 10px;
+    position: center;
+}
+
+.table-bordered {
+    background-color: #fff;
+    padding: 10px;
+}
 
 
+.table-bordered th,
+.table-bordered td {
+    border: 1px solid #b3b6b9;
+    padding: 10px;
+}
 
 .table-bordered th {
     text-align: center;
@@ -351,10 +356,6 @@ a:visited:hover {
 
 .our-news {
     margin: 30px;
-}
-
-.order-table {
-    padding: 10px;
 }
 
 #global-footer-navi p {
