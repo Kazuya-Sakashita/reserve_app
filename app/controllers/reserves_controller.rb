@@ -6,7 +6,7 @@ class ReservesController < ApplicationController
   def step1
     @reservation = Reservation.new
     @user = User.find_by(id: params[:id])
-    @open_days = (Date.today..Date.today.advance(months:3)).select{|date| date.wday !=1}
+    @open_days = (Date.today..Date.today.advance(months:3)).select{|date| date.wday !=1}-Holiday.pluck(:closed_day)
   end
   def step2
     session[:staff_id] = reservation_params[:staff_id]

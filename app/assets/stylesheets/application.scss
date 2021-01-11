@@ -26,6 +26,17 @@ html {
     color: #000000;
 }
 
+.pd-150 {
+    padding-top: 150px;
+}
+
+.pd-100 {
+    padding-top: 100px;
+}
+
+.pd-80 {
+    padding-top: 80px;
+}
 
 .clearfix::after {
     content: "";
@@ -75,6 +86,8 @@ html {
     color: rgba($color: #000, $alpha: 0.7);
     background-color: #c7c7c7;
     border-color: #868686;
+    box-shadow: 0 0 10px#c7c7c7, 0 0 40px #c7c7c7, 0 0 80px #c7c7c7;
+    transition-delay: 0.1s;
 }
 
 .main-container {

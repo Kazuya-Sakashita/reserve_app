@@ -7,7 +7,9 @@ Rails.application.routes.draw do
     resources :plans
     resources :boards
   end
-
+  namespace :admin do
+    resources :holidays, only: [:index, :new, :create, :show,  :edit, :destroy]
+  end
 
 # 会員情報登録
   get 'users/new', to:'users#new', as:'new_users'
