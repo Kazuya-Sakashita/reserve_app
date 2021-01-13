@@ -4,7 +4,7 @@ class CreateReservations < ActiveRecord::Migration[5.1]
       t.integer :user_id
       t.integer :staff_id
       t.integer :plan_id
-      t.datetime :reservation_date
+      t.date :reservation_date
       t.text :reservation_block
       t.integer :status
 
