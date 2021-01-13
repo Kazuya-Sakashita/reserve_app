@@ -1,0 +1,20 @@
+<div class="col-lg-10 offset-md-1 pd-150">
+  <h1>特別休日設定</h1>
+  <%= link_to '追加', new_admin_holiday_path %><br>
+  <table class="table table-bordered">
+    <thead>
+      <tr>
+        <th>編集</th>
+        <th>特別休日</th>
+      </tr>
+    </thead>
+    <tbody>
+      <% @holiday.each do |holiday| %>
+      <tr>
+        <td><%= link_to "削除", "holidays/#{holiday.id}", method: :delete, data: { confirm: '削除しますか？' } %></td>
+        <td><%= holiday.closed_day %></td>
+      </tr>
+      <% end %>
+    </tbody>
+  </table>
+</div>

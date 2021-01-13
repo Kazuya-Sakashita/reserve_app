@@ -1,0 +1,11 @@
+<div class="col-lg-10 offset-md-1 pd-150">
+
+  <h1>特別休日設定</h1>
+  <div class="form-group">
+    <%= form_for @holiday, url: admin_holidays_path, method: :post do |f| %>
+    <%= f.label :closed_day, "特別休日を選択してください" %><br>
+    <%= f.date_select :closed_day, {:use_two_digit_numbers => true} %>
+    <%= f.submit '特別休暇設定' ,class:"btn-secondary" %>
+    <% end %>
+  </div>
+</div>
