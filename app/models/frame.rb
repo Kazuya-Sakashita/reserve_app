@@ -1,2 +1,0 @@
-class Frame < ApplicationRecord
-end
