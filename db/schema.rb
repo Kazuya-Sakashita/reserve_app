@@ -18,13 +18,6 @@ ActiveRecord::Schema.define(version: 20210110232248) do
     t.datetime "updated_at", null: false
   end
 
-  create_table "frames", force: :cascade do |t|
-    t.integer "staff_id"
-    t.text "staff_block"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-  end
-
   create_table "holidays", force: :cascade do |t|
     t.date "closed_day"
     t.datetime "created_at", null: false
