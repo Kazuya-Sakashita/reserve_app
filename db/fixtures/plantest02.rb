@@ -1,0 +1,10 @@
+Plan.seed_once(:id,
+	{ id: "1", order: "カットコース", price: "3960", time_block: "3",description: "test_comment1",time: "0" },																
+	{ id: "2", order: "スピードコース", price: "2750", time_block: "2",description: "test_comment2",time: "0"  },																
+	{ id: "3", order: "シルバーコース", price: "2750", time_block: "2",description: "test_comment3",time: "0"  },																
+	{ id: "4", order: "パーマコース", price: "8800", time_block: "5",description: "test_comment4",time: "0"  },																
+	{ id: "5", order: "ヘアカラーコース", price: "7150", time_block: "4",description: "test_comment5",time: "0"  },																
+	{ id: "6", order: "シャンプー・ブローコース", price: "1100", time_block: "1",description: "test_comment6",time: "0"  },																
+	{ id: "7", order: "レディースシェービングコース", price: "2860", time_block: "2",description: "test_comment7",time: "0"  },																
+	{ id: "8", order: "ヘアカラー", price: "3300", time_block: "4",description: "test_comment8",time: "0"  },	
+)
