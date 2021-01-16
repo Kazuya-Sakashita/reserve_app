@@ -1,0 +1,19 @@
+<div>
+  <table class="table table-bordered ">
+    <thead>
+      <tr>
+        <th>メニュー</th>
+        <th>価格（税込）</th>
+        <th>ポイント</th>
+      </tr>
+    </thead>
+    <tbody class="order-table clear_text">
+      <% @plans.each do |plan| %>
+      <tr>
+        <td><%= plan.order %></td>
+        <td><%= plan.price %></td>
+        <td><%= plan.description %></td>
+      </tr>
+      <% end %>
+    </tbody>
+  </table>
