@@ -1,7 +1,11 @@
 class User < ApplicationRecord
-    has_secure_password 
-    validates :password, presence: true, length: { minimum: 6 }
-    validates :email, presence: true, uniqueness: true
+    has_secure_password validations: false
+    validate(on: :update) do |record|
+        record.errors.add(:password, :blank) unless record.password_digest.present?
+    end
+
+    validates_length_of :password, maximum: ActiveModel::SecurePassword::MAX_PASSWORD_LENGTH_ALLOWED, on: :update
+    validates_confirmation_of :password, allow_blank: true, on: :update
 
     has_many :reservations
     has_many :plans, through: :reservations
