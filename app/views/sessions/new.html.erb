@@ -2,6 +2,11 @@
   <% provide(:title, "Log in") %>
   <div class="row">
     <div>
+      <p>これはRuby on railsで作成したポートフォリオです。<br>
+        ログインは、<br />
+        　　　　　メールアドレス　123456@aa.bb.com<br>
+        　　　　　パスワード　123456<br>
+        ではいることができます。</p>
       <h1>Log in</h1>
       <%= form_for(:session, url: login_path) do |f| %>
       <%= f.label :email, "メール or 電話番号" %><%# メールと電話番号両方にしたため下のように書いた　%>
