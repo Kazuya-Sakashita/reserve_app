@@ -110,7 +110,7 @@ html {
     /* 画像の繰り返しを指定  */
     background-position: 0 0;
     /* 画像の表示位置を指定  */
-    background-size: contain;
+    background-size: cover;
     /* 画像のサイズを指定    */
     width: 100%;
     /* 横幅のサイズを指定    */
@@ -375,4 +375,8 @@ a:visited:hover {
     text-align: right;
     padding-top: 10px;
     padding-right: 10px;
+}
+
+.footer_table {
+    width: 100%;
 }
