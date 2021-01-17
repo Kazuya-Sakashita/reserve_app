@@ -121,6 +121,30 @@ html {
     background-image: radial-gradient(ellipse at center, rgba(255, 255, 255, 0) 40%, rgba(255, 255, 255, 0.5) 60%, rgba(255, 255, 255, 1) 100%), url("boy01.jpg");
 }
 
+.example {
+    /*親div*/
+    position: relative;
+    /*相対配置*/
+}
+
+.example p {
+    position: absolute;
+    /*絶対配置*/
+    color: rgba($color: rgb(255, 255, 255), $alpha: 0.4);
+    /*文字は白に*/
+    bottom: 0;
+    left: 0;
+    font-family: 'Kaushan Script', cursive;
+    padding-left: 20px;
+    padding-bottom: 20px;
+    font-size: 60px;
+    position: center;
+}
+
+.example img {
+    width: 100%;
+}
+
 .body-page {
     background-color: #e8e6e6;
 }
@@ -379,4 +403,8 @@ a:visited:hover {
 
 .footer_table {
     width: 100%;
+}
+
+.login-form {
+    padding-left: 100px;
 }
