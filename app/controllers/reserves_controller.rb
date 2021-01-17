@@ -9,6 +9,8 @@ class ReservesController < ApplicationController
     @open_days = (Date.today..Date.today.advance(months:3)).select{|date| date.wday !=1}-Holiday.pluck(:closed_day)
   end
   def step2
+binding.pry
+
     session[:staff_id] = reservation_params[:staff_id]
     session[:reservation_date] = reservation_params[:reservation_date].to_date 
     @reservation = Reservation.new
