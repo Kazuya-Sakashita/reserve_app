@@ -9,7 +9,7 @@
         ではいることができます。</p>
       <h1>Log in</h1>
       <%= form_for(:session, url: login_path) do |f| %>
-      <%= f.label :email, "メール or 電話番号" %><%# メールと電話番号両方にしたため下のように書いた　%>
+      <%= f.label :email, "メール" %>
       <input type="text" name="email" class="form-control">
       <%= f.label :password %>
       <%= f.password_field :password, class: 'form-control' %>
