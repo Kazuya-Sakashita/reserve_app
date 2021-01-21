@@ -1,0 +1,25 @@
+<% content_for :title do %>
+スタッフ管理画面
+<% end %>
+<div class="col-lg-10 offset-md-1 pd-150">
+  <h1>スタッフ一覧</h1>
+  <%= link_to '追加', new_admin_staff_path %><br>
+  <table class="table table-bordered">
+    <thead>
+      <tr>
+        <th>編集1</th>
+        <th>編集2</th>
+        <th>スタッフ指名</th>
+      </tr>
+    </thead>
+    <tbody>
+      <% @staff.each do |staff| %>
+      <tr>
+        <td><%= link_to '修正', edit_admin_staff_path(staff.id) %></td>
+        <td><%= link_to "削除", "staffs/#{staff.id}", method: :delete, data: { confirm: '削除しますか？' } %></td>
+        <td><%= staff.name %></td>
+      </tr>
+      <% end %>
+    </tbody>
+  </table>
+</div>
