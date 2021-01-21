@@ -40,13 +40,12 @@ class Admin::HolidaysController < ApplicationController
 
   private
   def if_not_admin
-    redirect_to root_path unless current_user.admin?
+    redirect_to root_path 
+    unless 
+      current_user.admin?
+    end
   end
-
+  def holiday_params
+    params.require(:holiday).permit(:closed_day)
+  end
 end
-
-
-    private
-        def holiday_params
-            params.require(:holiday).permit(:closed_day)
-        end
