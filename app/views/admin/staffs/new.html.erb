@@ -1,0 +1,14 @@
+<% content_for :title do %>
+スタッフ管理:追加画面
+<% end %>
+<div class="col-lg-10 offset-md-1 pd-150">
+
+  <h1>スタッフ追加</h1>
+  <div class="form-group">
+    <%= form_for @staff, url:  admin_staffs_path, method: :post do |f| %>
+    <%= f.label :name, "スタッフ名を入力ください" %><br>
+    <%=f.text_field :name, :placeholder => "スタッフ名を入力" , class:"form-control" %>
+    <%= f.submit 'スタッフ追加' ,class:"btn-secondary" %>
+    <% end %>
+  </div>
+</div>

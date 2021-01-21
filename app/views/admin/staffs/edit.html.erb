@@ -1,0 +1,18 @@
+<% content_for :title do %>
+スタッフ管理:修正画面
+<% end %>
+<div class="col-lg-10 offset-md-1 pd-150">
+  <h2>スタッフ情報（内容）修正</h2>
+
+  <%=form_for(@staff, url: admin_staff_path(@staff), html: {method: "patch"}) do |f| %>
+  <%= f.label :neme, "スタッフ名" %>
+  <%= f.text_field :name, placeholder: "enter :staff", class:"form-control" %>
+  <% if @staff.errors.messages[:staff].any? %>
+  <span class="error"><%= @staff.errors.messages[:staff][0] %></span>
+  <% end %>
+
+  <%= f.submit "Update", class: "btn btn-secondary" %>
+  <% end %>
+  <%= link_to '一覧' , {controller: :staffs, action: :index} , id: :link, class: :menu %>
+
+</div>
