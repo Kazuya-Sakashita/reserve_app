@@ -7,8 +7,6 @@ Rails.application.routes.draw do
     resources :plans
     resources :boards
     resources :staffs, only: [:index, :new, :create, :show,  :edit, :destroy, :update,]
-  end
-  namespace :admin do
     resources :holidays, only: [:index, :new, :create, :show,  :edit, :destroy]
   end
 

@@ -1,13 +1,11 @@
 class Admin::HolidaysController < ApplicationController
-  before_action :if_not_admin
-
+  before_action :admin_user
   def index
     @holiday = Holiday.all
   end
   def new
     @holiday = Holiday.new
   end
-
   def create
       if Holiday.create(holiday_params)
         redirect_to admin_holidays_path
@@ -15,8 +13,6 @@ class Admin::HolidaysController < ApplicationController
         render 'index'
       end
   end
-
-
   def show
     @holiday = Holiday.all
   end
@@ -37,13 +33,9 @@ class Admin::HolidaysController < ApplicationController
       end
   end
 
-
   private
-  def if_not_admin
-    redirect_to root_path 
-    unless 
-      current_user.admin?
-    end
+    def admin_user
+      redirect_to(root_path) unless current_user.admin?
   end
   def holiday_params
     params.require(:holiday).permit(:closed_day)
