@@ -1,4 +1,5 @@
 class Admin::StaffsController < ApplicationController
+  before_action :admin_user
 
   def index
     @staff = Staff.all
@@ -42,11 +43,8 @@ class Admin::StaffsController < ApplicationController
 
 
   private
-  def if_not_admin
-    redirect_to root_path 
-    unless 
-      current_user.admin?
-    end
+  def admin_user
+    redirect_to(root_path) unless current_user.admin?
   end
 
   def staff_params
