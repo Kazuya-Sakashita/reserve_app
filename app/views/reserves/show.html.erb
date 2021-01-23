@@ -19,8 +19,6 @@
       <td><%= reserve.reservation_date.strftime('%Y年%m月%d日') %></td>
       <td><%= reserve.staff.name %></td>
       <td><%= reserve.plan.order %></td>
-      <% @resevration_block = reserve.reservation_block[0] %>
-      <td><%= @reservations_time = Block.where("id = #{@resevration_block }" ) %></td>
     </tr>
     <% end %>
   </table>
