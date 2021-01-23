@@ -1,7 +1,7 @@
 class ReservesController < ApplicationController
 
   def new
-   @reservation = Reservation.new
+    @reservation = Reservation.new
   end
   def step1
     @reservation = Reservation.new
@@ -32,6 +32,7 @@ class ReservesController < ApplicationController
       staff_id: session[:staff_id],
       reservation_date: session[:reservation_date],
       plan_id: session[:plan_id],
+      block_id:reservation_params[:reservation_block],
     )
     block = (reservation_params[:reservation_block]).split()#ブロック番号（予約開始時間）
     temporary_block = reservation_params[:reservation_block]#計算するために一時保管する

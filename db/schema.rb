@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20210110232248) do
+ActiveRecord::Schema.define(version: 20210123222015) do
 
   create_table "blocks", force: :cascade do |t|
     t.text "block"
@@ -43,6 +43,7 @@ ActiveRecord::Schema.define(version: 20210110232248) do
     t.integer "status"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.integer "block_id"
   end
 
   create_table "staffs", force: :cascade do |t|
