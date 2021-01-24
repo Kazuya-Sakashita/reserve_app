@@ -5,18 +5,17 @@
   <h1>予約一覧</h1>
   <table class="table table-bordered">
     <tr>
-      <th>施術日</th>
+      <th>日時</th>
       <th>スタイリスト</th>
       <th>コース名</th>
-      <th>ブロック</th>
+      <th>予約時間</th>
     </tr>
     <% @reservations.each do |reserve| %>
     <tr>
       <td><%= reserve.reservation_date.strftime('%Y年%m月%d日') %></td>
       <td><%= reserve.staff.name %></td>
       <td><%= reserve.plan.order %></td>
-      <td><%= reserve.reservation_block %></td>
-    </tr>
-    <% end %>
+      <td><%= reserve.block.block %></td>
+      <% end %>
   </table>
 </div>

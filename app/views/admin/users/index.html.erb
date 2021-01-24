@@ -10,9 +10,9 @@ USER管理画面
         <th>編集内容</th>
         <th>id</th>
         <th>名前</th>
-        <th>登録日</th>
         <th>メールアドレス</th>
         <th>電話番号</th>
+        <th>誕生日</th>
       </tr>
     </thead>
     <tbody>
@@ -23,7 +23,7 @@ USER管理画面
         <td><%= user.name %></td>
         <td><%= user.email %></td>
         <td><%= user.phone_number %></td>
-        <td><%= user.created_at %></td>
+        <td><%= user.birthday %></td>
       </tr>
       <% end %>
     </tbody>
