@@ -1,20 +1,25 @@
 class Admin::HolidaysController < ApplicationController
   before_action :admin_user
   def index
-    @holiday = Holiday.all
+    @holidays = Holiday.all
   end
   def new
     @holiday = Holiday.new
   end
   def create
-      if Holiday.create(holiday_params)
-        redirect_to admin_holidays_path
+    @reservation_check = DateTime.new(params[:holiday]["closed_day(1i)"].to_i,params[:holiday]["closed_day(2i)"].to_i,params[:holiday]["closed_day(3i)"].to_i)
+    @reservation_day = Reservation.where(reservation_date:@reservation_check)
+      if @reservation_day.empty?
+        Holiday.create(holiday_params)
+        redirect_to admin_holidays_path and return
       else
-        render 'index'
+        redirect_to admin_holidays_path flash[:alert] = '予約が入ってる可能性があります、確認ください' and return
       end
   end
   def show
-    @holiday = Holiday.all
+    @holidays = Holiday.all
+    @holiday = Holiday.new
+    @reservations = Reservation.all
   end
   def destroy
     holiday = Holiday.find_by(id: params[:id])

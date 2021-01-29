@@ -2,6 +2,7 @@
 休業管理:一覧
 <% end %>
 <div class="col-lg-10 offset-md-1 pd-150">
+  <p class="alert-message"><%= flash[:alert]%></p>
   <h1>特別休日設定</h1>
   <%= link_to '追加', new_admin_holiday_path %><br>
   <table class="table table-bordered">
@@ -12,7 +13,7 @@
       </tr>
     </thead>
     <tbody>
-      <% @holiday.each do |holiday| %>
+      <% @holidays.each do |holiday| %>
       <tr>
         <td><%= link_to "削除", "holidays/#{holiday.id}", method: :delete, data: { confirm: '削除しますか？' } %></td>
         <td><%= holiday.closed_day %></td>
@@ -20,4 +21,5 @@
       <% end %>
     </tbody>
   </table>
-</div>
+  <div>
+  </div>
