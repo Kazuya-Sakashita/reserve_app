@@ -1,0 +1,30 @@
+<% content_for :title do %>
+休業管理:設定画面(予約状況確認)
+<% end %>
+<div class="col-lg-10 offset-md-1 pd-150">
+
+  <h1>休業管理:設定画面(予約状況確認)</h1>
+  <%= link_to '追加', new_admin_holiday_path %><br>
+  <table class="table table-bordered">
+    <thead>
+      <tr>
+        <th>編集</th>
+        <th>スタッフ名</th>
+        <th>お客様名</th>
+        <th>日付</th>
+        <th>時間</th>
+      </tr>
+    </thead>
+    <tbody>
+      <% @reservations.each do |reservation| %>
+      <tr>
+        <td><%= link_to '修正', edit_admin_holiday_path  %></td>
+        <td><%= reservation.staff_id %></td>
+        <td><%= reservation.user_id %></td>
+        <td><%= reservation.reservation_date %></td>
+        <td><%= reservation.block.block %></td>
+      </tr>
+      <% end %>
+    </tbody>
+  </table>
+</div>
