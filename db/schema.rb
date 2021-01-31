@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20210123222015) do
+ActiveRecord::Schema.define(version: 20210130094342) do
 
   create_table "blocks", force: :cascade do |t|
     t.text "block"
@@ -20,6 +20,13 @@ ActiveRecord::Schema.define(version: 20210123222015) do
 
   create_table "holidays", force: :cascade do |t|
     t.date "closed_day"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "inquiries", force: :cascade do |t|
+    t.string "name"
+    t.string "message"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
