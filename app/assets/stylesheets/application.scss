@@ -328,6 +328,18 @@ a:visited:hover {
     background-color: rgb(255, 255, 255);
 }
 
+.news-title {
+    text-align: center;
+    padding: 40px;
+}
+
+.news-table {
+    padding: 10px;
+    position: relative;
+    bottom: 30px;
+    background-color: rgb(255, 255, 255);
+}
+
 .information-menu {
     background-color: rgb(255, 255, 255);
 }
@@ -346,6 +358,11 @@ a:visited:hover {
     text-align: center;
 }
 
+.our-news {
+    position: relative;
+    bottom: 30px;
+    background-color: rgb(255, 255, 255);
+}
 
 .our-news h6 {
     padding-top: 10px;
@@ -376,6 +393,10 @@ a:visited:hover {
     background-color: #e8e6e6;
 }
 
+.our-news h2 {
+    background-color: #e8e6e6;
+}
+
 .resevationBtn {
     margin: 200px;
     position: relative;
@@ -392,7 +413,10 @@ a:visited:hover {
 
 
 .our-news {
+    position: relative;
     margin: 30px;
+    bottom: 30px;
+    background-color: rgb(255, 255, 255);
 }
 
 #global-footer-navi p {

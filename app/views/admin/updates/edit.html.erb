@@ -1,0 +1,22 @@
+<% content_for :title do %>
+Update管理:修正画面
+<% end %>
+<div class="col-lg-10 offset-md-1 pd-150">
+  <div>
+    <%= form_for(@update, url: admin_update_path(@update), html: {method: "patch"}) do |f| %>
+    <div class="form-group">
+      <%= f.label :date, "日付" %>
+      <%= f.date_select :date, {:use_two_digit_numbers => true} %><br><br>
+
+      <%= f.label :title, "表題" %>
+      <%=f.text_field :title, :placeholder => "例）予約機能実装など" , class:"form-control" %><br>
+
+      <%= f.label :time, "内容" %>
+      <%=f.text_area :content, :placeholder => "例）すでに予約入っていないか確認し、予約可能な時間を表示する" , class:"form-control" %><br>
+
+    </div>
+    <%= f.submit "保存" , class:"btn btn-secondary" %>
+    <% end %>
+    <%= link_to '一覧' , {controller: :updates, action: :index} , id: :link, class: :menu %>
+  </div>
+</div>

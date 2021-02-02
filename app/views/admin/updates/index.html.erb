@@ -1,0 +1,32 @@
+<% content_for :title do %>
+Update管理画面
+<% end %>
+<div class="col-lg-10 offset-md-1 pd-150">
+
+  <h1>Update一覧</h1>
+  <%= link_to '追加', new_admin_update_path %><br>
+  <table class="table table-bordered ">
+    <thead>
+      <tr>
+        <th>編集1</th>
+        <th>編集2</th>
+        <th>id</th>
+        <th>更新日</th>
+        <th>表題</th>
+        <th>内容</th>
+      </tr>
+    </thead>
+    <tbody>
+      <% @updates.each do |update| %>
+      <tr>
+        <td><%= link_to '修正', edit_admin_update_path(update.id) %></td>
+        <td><%= link_to "削除", "updates/#{update.id}", method: :delete, data: { confirm: '削除しますか？' } %></td>
+        <td><%= update.id %></td>
+        <td><%= update.date %></td>
+        <td><%= update.title %></td>
+        <td><%= update.content %></td>
+      </tr>
+      <% end %>
+    </tbody>
+  </table>
+</div>

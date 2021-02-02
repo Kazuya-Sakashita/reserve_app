@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+
   root 'reserves#index'
   resources :events
 
@@ -8,6 +9,7 @@ Rails.application.routes.draw do
     resources :boards
     resources :staffs, only: [:index, :new, :create, :show,  :edit, :destroy, :update,]
     resources :holidays, only: [:index, :new, :create, :show,  :edit, :destroy]
+    resources :updates, only: [:index, :new, :create, :edit, :destroy, :update,]
   end
 
 # 会員情報登録
