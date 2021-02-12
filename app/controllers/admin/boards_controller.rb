@@ -7,7 +7,6 @@ class Admin::BoardsController < ApplicationController
   end
 
   def show
-    # @bloks = Block.all
     @block_comment = Block.pluck(:block)
     block_num2 = Block.pluck(:id).count
     @reservation_day = Reservation.where(staff_id:params[:@staff_id]).where(reservation_date:params[:@day].to_date).pluck(:reservation_block).flatten
