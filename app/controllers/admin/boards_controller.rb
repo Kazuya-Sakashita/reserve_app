@@ -16,6 +16,7 @@ class Admin::BoardsController < ApplicationController
     @reservation_day = Reservation.where(staff_id:@staff_id).where(reservation_date:@day).pluck(:reservation_block).flatten
     @block_id = Block.pluck(:id)
     @day_status = Array.new
+    @staff_name = Staff.where(id:@staff_id).pluck(:name)
 
     if  
       @reservation_day.nil?
