@@ -3,20 +3,33 @@
 <% end %>
 <div class="col-md-8 offset-md-1 pd-150">
   <h1>予約一覧</h1>
-  <%= link_to '予約詳細', admin_board_path(current_user) %><br>
-  <table class="table table-bordered">
-    <tr>
-      <th>日時</th>
-      <th>スタイリスト</th>
-      <th>コース名</th>
-      <th>予約時間</th>
-    </tr>
-    <% @reservations.each do |reserve| %>
-    <tr>
-      <td><%= reserve.reservation_date.strftime('%Y年%m月%d日') %></td>
-      <td><%= reserve.staff.name %></td>
-      <td><%= reserve.plan.order %></td>
-      <td><%= reserve.block.block %></td>
-      <% end %>
-  </table>
-</div>
+  <%= form_with url:'/admin/boards/{current_user.id)', method: :get, local: true do |f| %>
+  <div class="form-group">
+    <%= f.label :@staff_id, "スタッフを指名" %>
+    <%= f.collection_select :@staff_id, Staff.all, :id, :name, :prompt => "スタイリストを選択" %>
+
+    <div class="form-group">
+      <%= f.label :@day, "予約希日時を選択ください" %>
+      <%= f.select :@day, @open_days %>
+    </div>
+    <%= f.submit '予約状況確認' ,class:"btn-secondary" %>
+    <% end %><br><br>
+
+
+
+    <table class="table table-bordered">
+      <tr>
+        <th>日時</th>
+        <th>スタイリスト</th>
+        <th>コース名</th>
+        <th>予約時間</th>
+      </tr>
+      <% @reservations.each do |reserve| %>
+      <tr>
+        <td><%= reserve.reservation_date.strftime('%Y年%m月%d日') %></td>
+        <td><%= reserve.staff.name %></td>
+        <td><%= reserve.plan.order %></td>
+        <td><%= reserve.block.block %></td>
+        <% end %>
+    </table>
+  </div>
