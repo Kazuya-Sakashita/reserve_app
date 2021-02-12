@@ -7,16 +7,13 @@ class Admin::BoardsController < ApplicationController
   end
 
   def show
-    @bloks = Block.all
+    # @bloks = Block.all
     @block_comment = Block.pluck(:block)
-    @staff_id = params[:@staff_id]
-    @day =  params[:@day]
-    @day = @day.to_date
     block_num2 = Block.pluck(:id).count
-    @reservation_day = Reservation.where(staff_id:@staff_id).where(reservation_date:@day).pluck(:reservation_block).flatten
+    @reservation_day = Reservation.where(staff_id:params[:@staff_id]).where(reservation_date:params[:@day].to_date).pluck(:reservation_block).flatten
     @block_id = Block.pluck(:id)
     @day_status = Array.new
-    @staff_name = Staff.where(id:@staff_id).pluck(:name)
+    @staff_name = Staff.where(id:params[:@staff_id]).pluck(:name) #viewでスタイリスト名を表示
 
     if  
       @reservation_day.nil?
