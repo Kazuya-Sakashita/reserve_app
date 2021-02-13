@@ -6,7 +6,7 @@
     <%= form_for(@reservation, url:create_reserves_path ) do |f| %>
     <%= f.label :reservation_block, "予約希望時間" %><br><br>
     <%= f.collection_select(:reservation_block, @time_blocks, :id, :block) %>
-    <%= f.submit '予約',class:"btn-secondary" %>
+    <%= f.submit '予約（確定）',class:"btn-secondary" %>
     <% end %><br><br><br><br><br>
   </div>
 </div>

@@ -55,6 +55,7 @@ class ReservesController < ApplicationController
   def index
         @plans = Plan.all
         @users = User.all
+        @updates = Update.all
         @reservations = Reservation.all
   end
 
@@ -79,6 +80,9 @@ class ReservesController < ApplicationController
 
   def plan_params
     params.require(:plan).permit(:order, :price, :time, :description, :block_count)
+  end
+  def update_params
+    params.require(:update).permit(:date, :title, :content)
   end
 
   def admin_user

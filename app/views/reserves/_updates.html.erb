@@ -1,0 +1,19 @@
+<table class="table table-bordered ">
+  <p>本来は、お店からのお知らせを掲示するものですが、ポートフォリをの機能につて記載させて頂きます。</p>
+  <thead>
+    <tr>
+      <th>更新日</th>
+      <th>表題</th>
+      <th>内容</th>
+    </tr>
+  </thead>
+  <tbody class="order-table clear_text">
+    <% @updates.each do |update| %>
+    <tr>
+      <td><%= update.date %></td>
+      <td><%= update.title %></td>
+      <td><%= update.content %></td>
+    </tr>
+    <% end %>
+  </tbody>
+</table>
