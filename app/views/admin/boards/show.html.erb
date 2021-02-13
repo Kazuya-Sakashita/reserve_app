@@ -1,0 +1,21 @@
+<% content_for :title do %>
+スタイリスト別予約状況
+<% end %>
+<div class="col-md-8 offset-md-1 pd-150">
+  <h1>予約一覧</h1>
+
+  <h3><%=@day %>　予約状況</h3>
+  <table class="table table-bordered">
+    <tr>
+      <th>時間</th>
+      <th><%= @staff_name[0] %></th>
+    </tr>
+    <% @status.each do |key,value| %>
+    <tr>
+      <td><%= key %></td>
+      <td><%= value %></td>
+    </tr>
+    <% end %>
+
+  </table>
+</div>
