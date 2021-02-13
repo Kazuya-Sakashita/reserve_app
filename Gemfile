@@ -32,8 +32,8 @@ gem 'bcrypt', '~> 3.1.7'
 gem 'jquery-rails'
 gem 'fullcalendar-rails'
 gem 'momentjs-rails'
-gem 'dotenv-rails'
 gem 'active_hash'
+gem 'dotenv-rails'
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
 
