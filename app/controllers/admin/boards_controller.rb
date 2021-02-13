@@ -9,11 +9,11 @@ class Admin::BoardsController < ApplicationController
   def show
     @block_comment = Block.pluck(:block)
     block_num2 = Block.pluck(:id).count
-    @reservation_day = Reservation.where(staff_id:params[:@staff_id]).where(reservation_date:params[:@day].to_date).pluck(:reservation_block).flatten
+    @day = params[:@day].to_date
+    @reservation_day = Reservation.where(staff_id:params[:@staff_id]).where(reservation_date:@day).pluck(:reservation_block).flatten
     @block_id = Block.pluck(:id)
     @day_status = Array.new
     @staff_name = Staff.where(id:params[:@staff_id]).pluck(:name) #viewでスタイリスト名を表示
-
     if  
       @reservation_day.nil?
       block_num2.times do |f|
