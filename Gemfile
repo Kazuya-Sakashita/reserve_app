@@ -33,6 +33,7 @@ gem 'jquery-rails'
 gem 'fullcalendar-rails'
 gem 'momentjs-rails'
 gem 'dotenv-rails'
+gem 'active_hash'
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
 
