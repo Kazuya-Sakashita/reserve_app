@@ -15,37 +15,39 @@
 <!-- body タグに data-turbolinks 属性を追加 -->
 
 <body data-turbolinks="false">
-  <header>
-    <div class="header_table">
-      <nav id="global-navi">
-        <ul class="menu">
-          <li><%= link_to 'HOME',root_path%></li>
-          <% if logged_in? %>
-          <li><%= link_to 'ログアウト',logout_path %></li>
-          <li><%= link_to '会員情報', users_show_path(id: current_user) %></li>
-          <li><%= link_to '予約', step1_reserves_path(current_user) %></li>
-          <% if current_user.admin === 1 %>
-          <li><%= link_to '予約状況', admin_boards_path %></li>
-          <li><%= link_to 'USER管理', admin_users_path %></li>
-          <li><%= link_to 'PLANS管理', admin_plans_path %></li>
-          <li><%= link_to 'STAFFS管理', admin_staffs_path %></li>
-          <li><%= link_to '休業管理', admin_holidays_path %></li>
-          <li><%= link_to 'UPDATE情報', admin_updates_path %></li>
-          <% end %>
-          <% else %>
-          <li><%= link_to 'ログイン',login_path %></li>
-          <li><%= link_to '会員登録',new_users_path %></li>
-          <% end %>
-          <li><%= link_to 'メニュー',root_path(anchor:'menu-table') %></li>
-          <li><%= link_to 'お店情報',root_path(anchor:'about_me') %></li>
-          <li><%= link_to 'お知らせ',root_path(anchor:'our-news') %></li>
-        </ul>
-      </nav>
-    </div>
-  </header>
+  <div class="container-fluid">
+    <header>
+      <div class="header_table">
+        <nav id="global-navi">
+          <ul class="menu">
+            <li><%= link_to 'HOME',root_path%></li>
+            <% if logged_in? %>
+            <li><%= link_to 'ログアウト',logout_path %></li>
+            <li><%= link_to '会員情報', users_show_path(id: current_user) %></li>
+            <li><%= link_to '予約', step1_reserves_path(current_user) %></li>
+            <% if current_user.admin === 1 %>
+            <li><%= link_to '予約状況', admin_boards_path %></li>
+            <li><%= link_to 'USER管理', admin_users_path %></li>
+            <li><%= link_to 'PLANS管理', admin_plans_path %></li>
+            <li><%= link_to 'STAFFS管理', admin_staffs_path %></li>
+            <li><%= link_to '休業管理', admin_holidays_path %></li>
+            <li><%= link_to 'UPDATE情報', admin_updates_path %></li>
+            <% end %>
+            <% else %>
+            <li><%= link_to 'ログイン',login_path %></li>
+            <li><%= link_to '会員登録',new_users_path %></li>
+            <% end %>
+            <li><%= link_to 'メニュー',root_path(anchor:'menu-table') %></li>
+            <li><%= link_to 'お店情報',root_path(anchor:'about_me') %></li>
+            <li><%= link_to 'お知らせ',root_path(anchor:'our-news') %></li>
+          </ul>
+        </nav>
+      </div>
+    </header>
 
-  <div class="body-page">
-    <%= yield %>
+    <div class="body-page">
+      <%= yield %>
+    </div>
   </div>
 </body>
 
