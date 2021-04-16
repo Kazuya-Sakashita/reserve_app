@@ -158,7 +158,8 @@ table {
     /* 縦幅のサイズを指定    */
     background-position: left top;
     background-position: center;
-    background-image: radial-gradient(ellipse at center, rgba(255, 255, 255, 0) 40%, rgba(255, 255, 255, 0.5) 60%, rgba(255, 255, 255, 1) 100%), url("boy01.jpg");
+    background-image: radial-gradient(ellipse at center, rgba(255, 255, 255, 0) 40%, rgba(255, 255, 255, 0.5) 60%, rgba(255, 255, 255, 1) 100%),
+        url("boy01.jpg");
 }
 
 .example {
@@ -264,8 +265,7 @@ a:visited:hover {
 }
 
 .calendar-month {
-    float: left;
-    /* インラインブロック要素にする */
+    // float: left;    /* インラインブロック要素にする */
     background-color: rgb(255, 255, 255);
     /* 背景色指
     // padding: 50px;    /* 余白指定 */
@@ -273,11 +273,12 @@ a:visited:hover {
     margin-right: auto;
     margin-left: auto;
     width: 80%;
+
+    h3 {
+        margin-left: 0;
+        margin-right: 0;
+    }
 }
-
-
-
-
 
 .form-group {
     font-size: 20px;
@@ -481,6 +482,7 @@ a:visited:hover {
     padding-top: 10px;
     padding-bottom: 10px;
 }
+
 
 .resevationBtn btn {
     position: center;
