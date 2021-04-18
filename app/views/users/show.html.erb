@@ -1,7 +1,7 @@
 <% content_for :title do %>
 お客様情報画面
 <% end %>
-<div class="col-lg-6 offset-md-2 pd-150">
+<div class="container-fluid　">
 
   <h1>お客様情報</h1>
 
@@ -16,9 +16,10 @@
     <p class="form-control">誕生日: <%= current_user.birthday %></p>
 
   </div>
-  <p>こちらから予約が可能です--->
-    <%= link_to '予約',step1_reserves_path(current_user) %><br>
-    こちらから来店履歴が確認出来ます--->
-    <%= link_to '履歴',reserves_show_path(current_user) %></p>
-
+  <div class="form-info">
+    <p>こちらから予約が可能です--->
+      <%= link_to '予約',step1_reserves_path(current_user) %><br>
+      こちらから来店履歴が確認出来ます--->
+      <%= link_to '履歴',reserves_show_path(current_user) %></p>
+  </div>
 </div>

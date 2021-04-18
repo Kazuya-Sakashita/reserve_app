@@ -5,31 +5,33 @@ PLAN管理画面
 
   <h1>メニュー一覧</h1>
   <%= link_to '追加', new_admin_plan_path %><br>
-  <table class="table table-bordered ">
-    <thead>
-      <tr>
-        <th>編集1</th>
-        <th>編集2</th>
-        <th>id</th>
-        <th>オーダー</th>
-        <th>価格</th>
-        <th>ブロック数</th>
-        <th>ポイント</th>
-      </tr>
-    </thead>
-    <tbody>
-      <% @plans.each do |plan| %>
-      <tr>
-        <td><%= link_to '修正', edit_admin_plan_path(plan.id) %></td>
-        <td><%= link_to "削除", "plans/#{plan.id}", method: :delete, data: { confirm: '削除しますか？' } %></td>
-        <td><%= plan.id %></td>
-        <td><%= plan.order %></td>
-        <td><%= plan.price %></td>
-        <td><%= plan.time_block %></td> <%#ここはいずれtextに変更し”60分”などの表記にする%>
-        <td><%= plan.description %></td>
+  <div class="order-table">
+    <table class="table table-bordered ">
+      <thead>
+        <tr>
+          <th>編集1</th>
+          <th>編集2</th>
+          <th>id</th>
+          <th>オーダー</th>
+          <th>価格</th>
+          <th>ブロック数</th>
+          <th>ポイント</th>
+        </tr>
+      </thead>
+      <tbody>
+        <% @plans.each do |plan| %>
+        <tr>
+          <td><%= link_to '修正', edit_admin_plan_path(plan.id) %></td>
+          <td><%= link_to "削除", "plans/#{plan.id}", method: :delete, data: { confirm: '削除しますか？' } %></td>
+          <td><%= plan.id %></td>
+          <td><%= plan.order %></td>
+          <td><%= plan.price %></td>
+          <td><%= plan.time_block %></td> <%#ここはいずれtextに変更し”60分”などの表記にする%>
+          <td><%= plan.description %></td>
 
-      </tr>
-      <% end %>
-    </tbody>
-  </table>
+        </tr>
+        <% end %>
+      </tbody>
+    </table>
+  </div>
 </div>

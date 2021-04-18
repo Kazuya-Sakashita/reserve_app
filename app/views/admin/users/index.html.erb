@@ -1,31 +1,33 @@
 <% content_for :title do %>
 USER管理画面
 <% end %>
-<div class="col-lg-10 offset-md-1 pd-150"><br><br><br><br><br><br>
+<div class="container-fluid">
+  <div class="col pd-150">
 
-  <h1>登録済みのユーザー一覧</h1>
-  <table class="table table-bordered">
-    <thead>
-      <tr>
-        <th>編集内容</th>
-        <th>id</th>
-        <th>名前</th>
-        <th>メールアドレス</th>
-        <th>電話番号</th>
-        <th>誕生日</th>
-      </tr>
-    </thead>
-    <tbody>
-      <% @users.each do |user| %>
-      <tr>
-        <td><%= link_to "削除", "users/#{user.id}", method: :delete, data: { confirm: '削除しますか？' } %></td>
-        <td><%= user.id %></td>
-        <td><%= user.name %></td>
-        <td><%= user.email %></td>
-        <td><%= user.phone_number %></td>
-        <td><%= user.birthday %></td>
-      </tr>
-      <% end %>
-    </tbody>
-  </table>
+    <h1>登録済みのユーザー　一覧</h1>
+    <table class="table table-bordered">
+      <thead>
+        <tr>
+          <th>編集内容</th>
+          <th>id</th>
+          <th>名前</th>
+          <th>メールアドレス</th>
+          <th>電話番号</th>
+          <th>誕生日</th>
+        </tr>
+      </thead>
+      <tbody>
+        <% @users.each do |user| %>
+        <tr>
+          <td><%= link_to "削除", "users/#{user.id}", method: :delete, data: { confirm: '削除しますか？' } %></td>
+          <td><%= user.id %></td>
+          <td><%= user.name %></td>
+          <td><%= user.email %></td>
+          <td><%= user.phone_number %></td>
+          <td><%= user.birthday %></td>
+        </tr>
+        <% end %>
+      </tbody>
+    </table>
+  </div>
 </div>
