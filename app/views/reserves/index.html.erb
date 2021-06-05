@@ -3,119 +3,133 @@ KAZUポートフォリオトップ画面
 <% end %>
 <div>
   <div class="main-container">
+    <!-- Top画像を表示 -->
     <div class="main-img">
-      <div class="part-img example">
+      <div class="part-img example ">
         <p>-Kazuya's ROOM-</p>
       </div>
     </div>
-    <div class="infomation-covid19">
-      <br>
+  </div>
+  <div class="infomation-covid19 ">
+    <div class="infomation-covid19-comment">
+
+      <!-- コロナウイルス感染防止取組 -->
       <h6>新型コロナウイルス感染拡大防止のための当社での取り組み</h6>
       <div class="infomation-covid19-text">
         <p>★当店では、お客様に少しでも安心してご来店頂けるよう対策の徹底に努めております</p>
         <p>★ 消毒、検温、空間除菌、換気など様々な感染予防対策を徹底して行なっております。</p>
         <p>★またお客様にも、手指の消毒・非接触での検温をお願いしております。</P>
         <p>★お客様ならびにスタッフの安心と安全のためご理解・ご協力をお願い致します。</p>
-        <br>
+      </div>
+    </div>
+  </div>
+
+  <%#お店の紹介　コメント%>
+  <div　class="about_me">
+    <div class="about_me_table">
+      <h3 class="about_me_h3" id="about_me">-Kazuya's ROOM-</h3>
+      <p>ここにはお店の紹介などを記載します。</p>
+      <p>お客様にどのような体験をしたもれるのかを素直に表現します。</p>
+      <p>テストコメント</p>
+      <p>テストコメント</p>
+      <p>テストコメント</p>
+    </div>
+  </div>
+  <div>
+    <div class="about_me_image">
+      <p><span>画像をのせて店内がどのような雰囲気なのかを感じていただく</span>
+        <%#お店の紹介画像%>
+      <div class="image_container">
+        <div class="row no-gutters">
+          <%= image_tag "s001.jpg", alt: "お店画像", class: "col-12 col-sm-3 col-lg-3", width: "200px"  %>
+          <%= image_tag "s001.jpg", alt: "お店画像", class: "col-12 col-sm-3 col-lg-3", width: "200px"  %>
+          <%= image_tag "s001.jpg", alt: "お店画像", class: "col-12 col-sm-3 col-lg-3", width: "200px"  %>
+          <%= image_tag "s001.jpg", alt: "お店画像", class: "col-12 col-sm-3 col-lg-3", width: "200px"  %>
+          <%= image_tag "s001.jpg", alt: "お店画像", class: "col-12 col-sm-3 col-lg-3", width: "200px"  %>
+          <%= image_tag "s001.jpg", alt: "お店画像", class: "col-12 col-sm-3 col-lg-3", width: "200px"  %>
+        </div>
       </div>
     </div>
 
-    <%#お店の紹介　コメント%>
-    <div class="col-lg-10 offset-md-1">
-      <div class="about_me_table">
-        <h3 class="about_me" id="about_me">-Kazuya's ROOM-</h3>
-        <p>ここにはお店の紹介などを記載します。</p>
-        <p>お客様にどのような体験をしたもれるのかを素直に表現します。</p>
-        <p>テストコメント</p>
-        <p>テストコメント</p>
-        <p>テストコメント</p>
-      </div>
-
-      <div class="about_me-image">
-        <p><span>画像をのせて店内がどのような雰囲気なのかを感じていただく</span>
-          <%#お店の紹介画像%>
-        <div class="image_container">
-          <%= image_tag "s001.jpg", alt: "お店画像", class: "image", width: "200px"  %>
-          <%= image_tag "s001.jpg", alt: "お店画像", class: "image", width: "200px"  %>
-          <%= image_tag "s001.jpg", alt: "お店画像", class: "image", width: "200px" %>
-          <%= image_tag "s001.jpg", alt: "お店画像", class: "image", width: "200px" %>
-        </div>
-      </div>
+  </div>
 
 
-
-      <div class="abaout_me_map">
-        <h3>ACCESS</h3>
-        <%#地図表示%>
-        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3282.2925270526634!2d135.51167495153246!3d34.64731459348585!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x6000ddf0fdd44579%3A0x90b6c0d913ac9a7e!2z5aSp546L5a-66aeF!5e0!3m2!1sja!2sjp!4v1609709365170!5m2!1sja!2sjp" width="400" height="300" frameborder="0" style="border:0;" allowfullscreen="" aria-hidden="false" tabindex="0"></iframe>
-        <br><br>
-        〒543-0055 大阪府大阪市天王寺区悲田院町１０−４５ <br>
-        サンプル住所として、天王寺駅のMAP及び住所を表示しています。
-      </div>
-
-      <div class="business_time">
-        <%#カレンダー%>
-        <div class="calendarBox">
-          <div class="inner cf">
-            <div class="calendarTextBox">
-              <h3 class="sub_tit">営業時間</h3>
-
-              <p class="colorsText">
-                <span class="holidayText">
-                  <span>&#9632;</span>
-                  定休日　毎週月曜日<br>
-                </span>
-                <span class="lastText">
-                  <span>&#9632;</span>
-                  最終受付20:00<br>
-                </span>
-                <span class="todayText">
-                  <span>&#9632;</span>
-                  平日 10：00〜21：00 <br>
-                  土日祝 10：00〜21：00 <br>
-                </span>
-              </p>
-              <p class="lastTime">
-                <em>※ 最終受付は20時となります。</em>
-              </p>
-              <dl class="holiday_dl">
-                <dt>［ 定休日 ］</dt>
-                <dd>毎週月曜日</dd><br><br><br>
-              </dl>
+  <div>
+    <div class="abaout_me_map">
+      <h3>ACCESS</h3>
+      <%#地図表示%>
+      <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3282.2925270526634!2d135.51167495153246!3d34.64731459348585!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x6000ddf0fdd44579%3A0x90b6c0d913ac9a7e!2z5aSp546L5a-66aeF!5e0!3m2!1sja!2sjp!4v1609709365170!5m2!1sja!2sjp" width="400" height="300" frameborder="0" style="border:0;" allowfullscreen="" aria-hidden="false" tabindex="0"></iframe>
+      <br><br>
+      〒543-0055 大阪府大阪市天王寺区悲田院町１０−４５ <br>
+      サンプル住所として、天王寺駅のMAP及び住所を表示しています。
+    </div>
+    <%#カレンダー%>
+    <div class="business_time">
+      <div class="container-fluid">
+        <div class="row no-gutters">
+          <div class="col-md bg-color">
+            <div class="calendarBox">
+              <div class="inner cf">
+                <div class="calendarTextBox">
+                  <h3 class="sub_tit">営業時間</h3>
+                  <p class="colorsText">
+                    <span class="holidayText">
+                      <span>&#9632;</span>
+                      定休日　毎週月曜日<br>
+                    </span>
+                    <span class="lastText">
+                      <span>&#9632;</span>
+                      最終受付20:00<br>
+                    </span>
+                    <span class="todayText">
+                      <span>&#9632;</span>
+                      平日 10：00〜21：00 <br>
+                      土日祝 10：00〜21：00 <br>
+                    </span>
+                  </p>
+                  <p class="lastTime">
+                    <em>※ 最終受付は20時となります。</em>
+                  </p>
+                  <dl class="holiday_dl">
+                    <dt>［ 定休日 ］</dt>
+                    <dd>毎週月曜日</dd><br><br><br>
+                  </dl>
+                </div>
+              </div>
+            </div>
+          </div>
+          <%#ここまでカレンダー%>
+          <div class="col-md bg-color">
+            <div class="calendar-month">
+              <%#カレンダーコンテナー%>
+              <%= render 'calendar' %>
+              <%#ここまでカレンダーコンテナー%>
             </div>
           </div>
         </div>
-        <%#ここまでカレンダー%>
-
-        <div class="calendar-month">
-          <%#カレンダーコンテナー%>
-          <%= render 'calendar' %>
-          <%#ここまでカレンダーコンテナー%>
-        </div>
       </div>
+    </div>
+  </div>
+  <br>
+  <div class="resevationBtn">
+    <p>下記のボタンからご予約出来ます。</p>
+    <%= button_to '予約' , {:controller => "sessions", :action => "new"}, {:method => :get, class: "btn btn-block btn-secondary"} %>
+  </div>
+  <br>
+  <div class="menu-table" id="menu-table">
+    <h2 class="menu-title">メニュー</h2>
+    <div class="order-table">
+      <%= render 'order' %>
+    </div>
+  </div>
 
-      <br>
-      <div class="resevationBtn">
-        <h3>下記のボタンからご予約出来ます。</h3>
-        <%= button_to '予約' , {:controller => "sessions", :action => "new"}, {:method => :get, class: "btn btn-block btn-secondary"} %>
-      </div>
-      <br>
-      <div class="menu-table" id="menu-table">
-        <h2 class="menu-title">メニュー</h2>
-        <div class="order-table">
-          <%= render 'order' %>
-        </div>
-      </div>
 
 
-
-      <div class="our-news">
-        <h2 class="menu-title">お知らせ</h2>
-        <div class="order-table">
-          <p id="our-news">お店からのお知らせを掲載</p>
-          <%= render 'updates' %>
-        </div>
-      </div>
+  <div class="our-news">
+    <h2 class="menu-title">お知らせ</h2>
+    <div class="order-table">
+      <p id="our-news">お店からのお知らせを掲載</p>
+      <%= render 'updates' %>
     </div>
   </div>
 </div>
