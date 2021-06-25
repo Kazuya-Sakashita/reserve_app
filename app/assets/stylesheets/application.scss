@@ -47,6 +47,16 @@ body {
     font-size: 80%;
 }
 
+.dropdown-item{
+    color: #000000;
+    background-color: #6a6a6a;
+}
+
+/* マウスオーバー時 */
+.dropdown-item:hover{
+    color: #e8e6e6;
+    background-color: #6a6a6a;
+}
 
 .navbar-toggler {
     border-color: #e8e6e6;
