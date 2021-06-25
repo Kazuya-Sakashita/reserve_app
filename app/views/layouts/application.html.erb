@@ -15,37 +15,50 @@
 <body data-turbolinks="false">
   <div class="container-fluid">
     <header>
-      <div>
-        <nav>
-          <ul>
-            <li><%= link_to 'HOME',root_path%></li>
-            <li><%= link_to 'メニュー',root_path(anchor:'menu-table') %></li>
-            <li><%= link_to 'お店情報',root_path(anchor:'about_me') %></li>
-            <li><%= link_to 'お知らせ',root_path(anchor:'our-news') %></li>
+      <nav class="navbar navbar-expand-lg ">
+        <a class="navbar-brand" href="#">K'S ROOM</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+          <ul class="navbar-nav mr-auto">
+            <li><%= link_to 'HOME',root_path,{class:"nav-link"} %></li>
+            <li><%= link_to 'メニュー',root_path(anchor:'menu-table'),{class:"nav-link"} %></li>
+            <li><%= link_to 'お店情報',root_path(anchor:'about_me'),{class:"nav-link"} %></li>
+            <li><%= link_to 'お知らせ',root_path(anchor:'our-news'),{class:"nav-link"} %></li>
+
             <% if logged_in? %>
-            <li><%= link_to 'ログアウト',logout_path %></li>
-            <li><%= link_to '会員情報', users_show_path(id: current_user) %></li>
-            <li><%= link_to '予約', step1_reserves_path(current_user) %></li>
+            <li><%= link_to 'ログアウト',logout_path,{class:"nav-link"} %></li>
+            <li><%= link_to '会員情報', users_show_path(id: current_user),{class:"nav-link"} %></li>
+            <li><%= link_to '予約', step1_reserves_path(current_user),{class:"nav-link"} %></li>
+
+
             <% if current_user.admin === 1 %>
-            <li class="has-child"><%= link_to '管理者メニュー', "#" %>
-              <ul>
-                <li><%= link_to '予約状況', admin_boards_path %></li>
-                <li><%= link_to 'USER管理', admin_users_path %></li>
-                <li><%= link_to 'PLANS管理', admin_plans_path %></li>
-                <li><%= link_to 'STAFFS管理', admin_staffs_path %></li>
-                <li><%= link_to '休業管理', admin_holidays_path %></li>
-                <li><%= link_to 'UPDATE情報', admin_updates_path %></li>
-                <% end %>
-                <% else %>
-                <li><%= link_to 'ログイン',login_path %></li>
-                <li><%= link_to '会員登録',new_users_path %></li>
-                <% end %>
-              </ul>
+            <li class="nav-item dropdown">
+              <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                管理者メニュー
+              </a>
+              <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                <%= link_to '予約状況', admin_boards_path, {class:"dropdown-item"} %>
+                <%= link_to 'USER管理', admin_users_path, {class:"dropdown-item"} %>
+                <%= link_to 'PLANS管理', admin_plans_path, {class:"dropdown-item"} %>
+                <%= link_to 'STAFFS管理', admin_staffs_path, {class:"dropdown-item"} %>
+                <%= link_to '休業管理', admin_holidays_path, {class:"dropdown-item"} %>
+                <%= link_to 'UPDATE情報', admin_updates_path, {class:"dropdown-item"} %>
+              </div>
             </li>
 
+            <% end %>
+            <% else %>
+            <li><%= link_to 'ログイン',login_path,{class:"nav-link"}  %></li>
+            <li><%= link_to '会員登録',new_users_path,{class:"nav-link"}  %></li>
+            <% end %>
           </ul>
-        </nav>
-      </div>
+
+        </div>
+
+      </nav>
     </header>
 
     <div class="body-page">
