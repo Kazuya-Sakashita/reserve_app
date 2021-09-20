@@ -46,6 +46,7 @@ group :development, :test do
   gem 'pry-byebug'
   gem 'pry-doc'
   gem 'sqlite3'
+  gem 'rubocop', require: false
 end
 
 group :development do

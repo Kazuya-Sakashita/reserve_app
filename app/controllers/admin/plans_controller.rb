@@ -10,13 +10,12 @@ class Admin::PlansController < ApplicationController
   end
 
   def create
-      if Plan.create(plan_params)
-        redirect_to admin_plans_path
-      else
-        render 'new'
-      end
+    if Plan.create(plan_params)
+      redirect_to admin_plans_path
+    else
+      render 'new'
+    end
   end
-
 
   def show
     @plan = Plan.find_by(id: params[:id])
@@ -28,20 +27,20 @@ class Admin::PlansController < ApplicationController
   end
 
   def update
-      @plan = Plan.find_by(id: params[:id])
-      if @plan.update_attributes(plan_params)
-        redirect_to admin_plans_path
-      else
-        render:edit
-      end
+    @plan = Plan.find_by(id: params[:id])
+    if @plan.update_attributes(plan_params)
+      redirect_to admin_plans_path
+    else
+      render :edit
+    end
   end
 
   def destroy
     plan = Plan.find_by(id: params[:id])
-    if plan.destroy 
+    if plan.destroy
       redirect_to admin_plans_path
     else
-      render:index
+      render :index
     end
   end
 
@@ -50,12 +49,12 @@ class Admin::PlansController < ApplicationController
   end
 
   private
-    def plan_params
-      params.require(:plan).permit(:order, :price, :time, :description, :time_block)
-    end
 
-    def admin_user
-      redirect_to(root_path) unless current_user.admin?
-    end
-  
+  def plan_params
+    params.require(:plan).permit(:order, :price, :time, :description, :time_block)
+  end
+
+  def admin_user
+    redirect_to(root_path) unless current_user.admin?
+  end
 end

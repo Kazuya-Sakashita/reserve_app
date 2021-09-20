@@ -3,7 +3,7 @@ class Admin::UsersController < ApplicationController
   before_action :set_user
 
   def index
-    @users = User.all.order("created_at DESC")
+    @users = User.all.order('created_at DESC')
   end
 
   def new
@@ -23,20 +23,20 @@ class Admin::UsersController < ApplicationController
   def update
     @users = User.all
     @user = User.find_by(id: params[:id])
-      if @user.update_attributes(user_params)
-        redirect_to admin_user_path
-      else
-        render:edit
-      end
+    if @user.update_attributes(user_params)
+      redirect_to admin_user_path
+    else
+      render :edit
+    end
   end
 
   def destroy
     @users = User.all
     user = User.find_by(id: params[:id])
-    if user.destroy 
+    if user.destroy
       redirect_to admin_users_path
     else
-      render:index
+      render :index
     end
   end
 
@@ -45,9 +45,11 @@ class Admin::UsersController < ApplicationController
   end
 
   private
+
   def user_params
     params.require(:user).permit(:name, :address, :password, :password_confirmation, :birthday, :phone_number, :email, :etc)
   end
+
   def admin_user
     redirect_to(root_path) unless current_user.admin?
   end

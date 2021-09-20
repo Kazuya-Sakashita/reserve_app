@@ -1,9 +1,7 @@
 class SessionsController < ApplicationController
-
   def new
     @user = User.new
   end
-
 
   def create
     # メール & 電話での実装
@@ -25,9 +23,7 @@ class SessionsController < ApplicationController
   end
 
   def destroy
-  session[:user_id] = nil
-  redirect_to root_path, notice: "you have successfully logout"
+    session[:user_id] = nil
+    redirect_to root_path, notice: 'you have successfully logout'
   end
-
-
 end
