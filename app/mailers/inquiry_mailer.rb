@@ -3,7 +3,7 @@ class InquiryMailer < ApplicationMailer
     @inquiry = inquiry
     mail(
       from: 'system@example.com',
-      to:   'kz.sincerity@gmail.com',
+      to: 'kz.sincerity@gmail.com',
       subject: 'お問い合わせ通知'
     )
   end
